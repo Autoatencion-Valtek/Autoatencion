@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoatención Post Venta - Valtek Informática Médica</title>
+    <title>Centro de Autoatención ProActiveLIS - Valtek Informática Médica</title>
     <style>
         :root {
             --valtek-red: #E31B23;
@@ -106,7 +106,7 @@
             background: var(--valtek-red);
         }
 
-        /* VISTA 1: MENU PRINCIPAL DE 3 AREAS (LANDING) */
+        /* VISTA 1: LANDING PRINCIPAL DE 3 ÁREAS MADRE */
         #landing-view {
             padding: 40px 28px;
         }
@@ -227,7 +227,7 @@
         .btn-enter-area.dark { border-color: var(--dark-bg); color: var(--dark-bg); }
         .btn-enter-area.dark:hover { background: var(--dark-bg); color: #ffffff; }
 
-        /* VISTA 2: CENTRO DE CAPACITACIÓN PROACTIVE (NUESTRO PORTAL ACTUAL) */
+        /* VISTA 2: INFORMÁTICA (SOPORTE PROACTIVE) */
         #proactive-view {
             display: none;
         }
@@ -442,7 +442,7 @@
 
         .modal-body video { width: 100%; height: 100%; }
 
-        /* VISTAS EN CONSTRUCCION (APLICACIONES Y TÉCNICO) */
+        /* VISTAS TEMPORALES */
         #placeholder-view {
             display: none;
             padding: 80px 20px;
@@ -501,15 +501,15 @@
         </div>
 
         <div class="main-areas-grid">
-            <!-- Tarjeta 1: Soporte Proactive -->
+            <!-- Tarjeta 1: Informática -->
             <div class="main-area-card red">
                 <div class="icon-circle red">💬</div>
-                <h2 class="area-card-title">Soporte Proactive</h2>
+                <h2 class="area-card-title">Soporte Informática</h2>
                 <p class="area-card-desc">Gestión de incidencias y requerimientos a través de nuestra plataforma ProActiveLIS.</p>
                 <button class="btn-enter-area red" onclick="showProactive()">Ingresar</button>
             </div>
 
-            <!-- Tarjeta 2: Soporte Aplicaciones -->
+            <!-- Tarjeta 2: Aplicaciones -->
             <div class="main-area-card green">
                 <div class="icon-circle green">🖥️</div>
                 <h2 class="area-card-title">Soporte Aplicaciones</h2>
@@ -527,10 +527,10 @@
         </div>
     </div>
 
-    <!-- 2. VISTA DETALLE: SOPORTE PROACTIVE (CENTRO DE CAPACITACIÓN) -->
+    <!-- 2. VISTA DETALLE: INFORMÁTICA / PROACTIVE -->
     <div id="proactive-view">
         <section class="hero">
-            <h1 class="hero-title">Soporte ProactiveLIS — Capacitación</h1>
+            <h1 class="hero-title">Soporte Informática — Capacitación ProActiveLIS</h1>
             <p class="hero-sub">Selecciona un área de soporte a continuación para acceder a sus guías y cápsulas en video.</p>
         </section>
 
@@ -564,8 +564,8 @@
                         <p class="card-desc">Dos caminos para dar de alta un examen en ProActiveLIS. Ajuste de respuestas y fórmulas.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Cómo crear una prueba en el sistema', 'prestaciones/1_crear_una_prueba/1_crear_una_prueba.mp4')">▶ Ver Video</button>
-                        <a href="prestaciones/1_crear_una_prueba/1_crear_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Cómo crear una prueba en el sistema', 'Informatica/prestaciones/1_crear_una_prueba/1_crear_una_prueba.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/1_crear_una_prueba/1_crear_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
 
@@ -576,8 +576,8 @@
                         <p class="card-desc">Crea una prestación y vincúlale un único examen. Asignación de muestra y tubo.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Configuración de prestación simple', 'prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.mp4')">▶ Ver Video</button>
-                        <a href="prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Configuración de prestación simple', 'Informatica/prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
 
@@ -588,8 +588,8 @@
                         <p class="card-desc">Agrupa múltiples análisis bajo un mismo perfil (ej. Perfil Tiroideo).</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Prestaciones compuestas o perfiles', 'prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.mp4')">▶ Ver Video</button>
-                        <a href="prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Prestaciones compuestas o perfiles', 'Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
 
@@ -600,8 +600,8 @@
                         <p class="card-desc">Configuración de límites de normalidad por edad, sexo y tipo de muestra.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Añadir rangos de referencia', 'prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.mp4')">▶ Ver Video</button>
-                        <a href="prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Añadir rangos de referencia', 'Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
 
@@ -612,8 +612,8 @@
                         <p class="card-desc">Ajuste del número de decimales visibles en los resultados de una prueba.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Añadir decimales a una prueba', 'prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.mp4')">▶ Ver Video</button>
-                        <a href="prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Añadir decimales a una prueba', 'Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
 
@@ -624,8 +624,8 @@
                         <p class="card-desc">Creación de cálculos automáticos asociando alias de otras pruebas.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Pruebas tipo Fórmula', 'prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.mp4')">▶ Ver Video</button>
-                        <a href="prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Pruebas tipo Fórmula', 'Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
 
@@ -636,8 +636,8 @@
                         <p class="card-desc">Modificación de rangos biológicos y valores críticos en pruebas existentes.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Editar valores de referencia', 'prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.mp4')">▶ Ver Video</button>
-                        <a href="prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Editar valores de referencia', 'Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
             </div>
@@ -651,8 +651,8 @@
                         <p class="card-desc">Alta de nuevos funcionarios tomando un usuario existente como referencia.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Cómo crear un usuario', 'usuarios/1_creacion_de_usuario_final.mp4')">▶ Ver Video</button>
-                        <a href="usuarios/1_creacion_de_usuario_final.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Cómo crear un usuario', 'Informatica/usuarios/1_creacion_de_usuario_final.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/usuarios/1_creacion_de_usuario_final.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
             </div>
@@ -666,8 +666,8 @@
                         <p class="card-desc">Ajuste de posición y calibración de densidad de impresión.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Calibrar la impresora Zebra', 'zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.mp4')">▶ Ver Video</button>
-                        <a href="zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Calibrar la impresora Zebra', 'Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
 
@@ -678,8 +678,8 @@
                         <p class="card-desc">Conexión e instalación manual de controladores en Windows.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Instalación de drivers Zebra', 'zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.mp4')">▶ Ver Video</button>
-                        <a href="zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Instalación de drivers Zebra', 'Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
 
@@ -690,8 +690,8 @@
                         <p class="card-desc">Vinculación de la impresora en el archivo de configuración ProActiveLIS.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Plug and Play y archivo .ini', 'zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.mp4')">▶ Ver Video</button>
-                        <a href="zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Plug and Play y archivo .ini', 'Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
 
@@ -702,15 +702,15 @@
                         <p class="card-desc">Limpieza del cabezal térmico y rodillo impulsor.</p>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Revisión física y limpieza', 'zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.mp4')">▶ Ver Video</button>
-                        <a href="zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                        <button class="btn-video" onclick="openLocalVideo('Revisión física y limpieza', 'Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.mp4')">▶ Ver Video</button>
+                        <a href="Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- 3. VISTA TEMPORAL (OTRAS AREAS EN CONSTRUCCIÓN) -->
+    <!-- 3. VISTAS TEMPORALES -->
     <div id="placeholder-view">
         <div class="placeholder-icon" id="ph-icon">⚙️</div>
         <h2 class="landing-title" id="ph-title">Módulo en Desarrollo</h2>
@@ -748,7 +748,7 @@
         document.getElementById('proactive-view').style.display = 'block';
         document.getElementById('placeholder-view').style.display = 'none';
         document.getElementById('btn-back').style.display = 'block';
-        document.getElementById('portal-badge-text').innerText = 'Soporte ProactiveLIS';
+        document.getElementById('portal-badge-text').innerText = 'Soporte Informática';
     }
 
     function showPlaceholder(title, icon) {
