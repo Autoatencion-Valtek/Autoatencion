@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Autoatención ProActiveLIS - Valtek Informática Médica</title>
+    <title>Centro de Autoatención - Valtek Informática Médica</title>
     <style>
         :root {
             --valtek-red: #E31B23;
@@ -106,7 +106,7 @@
             background: var(--valtek-red);
         }
 
-        /* VISTA 1: LANDING PRINCIPAL DE 3 ÁREAS MADRE */
+        /* VISTA 1: LANDING PRINCIPAL DE 3 ÁREAS */
         #landing-view {
             padding: 40px 28px;
         }
@@ -227,10 +227,8 @@
         .btn-enter-area.dark { border-color: var(--dark-bg); color: var(--dark-bg); }
         .btn-enter-area.dark:hover { background: var(--dark-bg); color: #ffffff; }
 
-        /* VISTA 2: INFORMÁTICA (SOPORTE PROACTIVE) */
-        #proactive-view {
-            display: none;
-        }
+        /* VISTAS DETALLADAS (INFORMÁTICA Y APLICACIONES) */
+        .view-section { display: none; }
 
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1a3636 100%);
@@ -258,7 +256,7 @@
 
         .areas-grid-tabs {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 16px;
         }
 
@@ -492,7 +490,7 @@
         <button class="btn-back-home" id="btn-back" onclick="showLanding()">← Volver a Áreas</button>
     </header>
 
-    <!-- 1. VISTA LANDING (MENÚ DE 3 ÁREAS PRINCIPALES) -->
+    <!-- 1. VISTA LANDING (MENÚ DE 3 ÁREAS) -->
     <div id="landing-view">
         <div class="landing-header">
             <div class="landing-tag">Autoatención Post Venta</div>
@@ -514,7 +512,7 @@
                 <div class="icon-circle green">🖥️</div>
                 <h2 class="area-card-title">Soporte Aplicaciones</h2>
                 <p class="area-card-desc">Guías y autoatención para software, configuraciones y sistemas clínicos.</p>
-                <button class="btn-enter-area green" onclick="showPlaceholder('Soporte Aplicaciones', '🖥️')">Ingresar</button>
+                <button class="btn-enter-area green" onclick="showAplicaciones()">Ingresar</button>
             </div>
 
             <!-- Tarjeta 3: Servicio Técnico -->
@@ -527,8 +525,8 @@
         </div>
     </div>
 
-    <!-- 2. VISTA DETALLE: INFORMÁTICA / PROACTIVE -->
-    <div id="proactive-view">
+    <!-- 2. VISTA DETALLE: INFORMÁTICA -->
+    <div id="proactive-view" class="view-section">
         <section class="hero">
             <h1 class="hero-title">Soporte Informática — Capacitación ProActiveLIS</h1>
             <p class="hero-sub">Selecciona un área de soporte a continuación para acceder a sus guías y cápsulas en video.</p>
@@ -536,17 +534,17 @@
 
         <section class="areas-nav-section">
             <div class="areas-grid-tabs">
-                <div class="area-tab-card active" onclick="switchArea('area1', this)">
+                <div class="area-tab-card active" onclick="switchArea('inf-area1', this)">
                     <span class="area-number-badge">Área 01</span>
                     <h2 class="area-tab-title">Pruebas & Prestaciones</h2>
                     <span class="area-tab-count">7 Cápsulas disponibles</span>
                 </div>
-                <div class="area-tab-card" onclick="switchArea('area2', this)">
+                <div class="area-tab-card" onclick="switchArea('inf-area2', this)">
                     <span class="area-number-badge">Área 02</span>
                     <h2 class="area-tab-title">Gestión de Usuarios</h2>
                     <span class="area-tab-count">1 Cápsula disponible</span>
                 </div>
-                <div class="area-tab-card" onclick="switchArea('area3', this)">
+                <div class="area-tab-card" onclick="switchArea('inf-area3', this)">
                     <span class="area-number-badge">Área 03</span>
                     <h2 class="area-tab-title">Etiquetadoras Zebra</h2>
                     <span class="area-tab-count">4 Cápsulas disponibles</span>
@@ -555,8 +553,8 @@
         </section>
 
         <main class="content-body">
-            <!-- ÁREA 1 -->
-            <div id="area1" class="cards-grid area-panel active">
+            <!-- ÁREA 1 INFORMÁTICA -->
+            <div id="inf-area1" class="cards-grid area-panel active">
                 <div class="card">
                     <div>
                         <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
@@ -642,8 +640,8 @@
                 </div>
             </div>
 
-            <!-- ÁREA 2 -->
-            <div id="area2" class="cards-grid area-panel">
+            <!-- ÁREA 2 INFORMÁTICA -->
+            <div id="inf-area2" class="cards-grid area-panel">
                 <div class="card">
                     <div>
                         <span class="card-tag">TEMA 01 • ACCESOS Y PERMISOS</span>
@@ -657,8 +655,8 @@
                 </div>
             </div>
 
-            <!-- ÁREA 3 -->
-            <div id="area3" class="cards-grid area-panel">
+            <!-- ÁREA 3 INFORMÁTICA -->
+            <div id="inf-area3" class="cards-grid area-panel">
                 <div class="card">
                     <div>
                         <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
@@ -710,7 +708,41 @@
         </main>
     </div>
 
-    <!-- 3. VISTAS TEMPORALES -->
+    <!-- 3. VISTA DETALLE: APLICACIONES -->
+    <div id="aplicaciones-view" class="view-section">
+        <section class="hero">
+            <h1 class="hero-title">Soporte Aplicaciones — Equipos & Sistemas Clínicos</h1>
+            <p class="hero-sub">Guías, procedimientos operativos y capacitación en video para analizadores del laboratorio.</p>
+        </section>
+
+        <section class="areas-nav-section">
+            <div class="areas-grid-tabs">
+                <div class="area-tab-card active" onclick="switchArea('app-area1', this)">
+                    <span class="area-number-badge">Química Clínica</span>
+                    <h2 class="area-tab-title">Mindray BS-480</h2>
+                    <span class="area-tab-count">1 Cápsula disponible</span>
+                </div>
+            </div>
+        </section>
+
+        <main class="content-body">
+            <!-- ÁREA BS-480 -->
+            <div id="app-area1" class="cards-grid area-panel active">
+                <div class="card">
+                    <div>
+                        <span class="card-tag">MANTENIMIENTO • ELECTRÓDOS</span>
+                        <h3 class="card-title">Cambio de electrodos Equipo BS-480</h3>
+                        <p class="card-desc">Procedimiento paso a paso para el reemplazo, ajuste e instalación correcta de electrodos en el analizador Mindray BS-480.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="openLocalVideo('Cambio de electrodos Equipo BS-480', 'Aplicaciones/BS480/cambio_electrodos.mp4')">▶ Ver Video</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 4. VISTAS TEMPORALES (SERVICIO TÉCNICO) -->
     <div id="placeholder-view">
         <div class="placeholder-icon" id="ph-icon">⚙️</div>
         <h2 class="landing-title" id="ph-title">Módulo en Desarrollo</h2>
@@ -735,25 +767,36 @@
 </div>
 
 <script>
-    function showLanding() {
-        document.getElementById('landing-view').style.display = 'block';
+    function hideAllViews() {
+        document.getElementById('landing-view').style.display = 'none';
         document.getElementById('proactive-view').style.display = 'none';
+        document.getElementById('aplicaciones-view').style.display = 'none';
         document.getElementById('placeholder-view').style.display = 'none';
+    }
+
+    function showLanding() {
+        hideAllViews();
+        document.getElementById('landing-view').style.display = 'block';
         document.getElementById('btn-back').style.display = 'none';
         document.getElementById('portal-badge-text').innerText = 'Autoatención Post Venta';
     }
 
     function showProactive() {
-        document.getElementById('landing-view').style.display = 'none';
+        hideAllViews();
         document.getElementById('proactive-view').style.display = 'block';
-        document.getElementById('placeholder-view').style.display = 'none';
         document.getElementById('btn-back').style.display = 'block';
         document.getElementById('portal-badge-text').innerText = 'Soporte Informática';
     }
 
+    function showAplicaciones() {
+        hideAllViews();
+        document.getElementById('aplicaciones-view').style.display = 'block';
+        document.getElementById('btn-back').style.display = 'block';
+        document.getElementById('portal-badge-text').innerText = 'Soporte Aplicaciones';
+    }
+
     function showPlaceholder(title, icon) {
-        document.getElementById('landing-view').style.display = 'none';
-        document.getElementById('proactive-view').style.display = 'none';
+        hideAllViews();
         document.getElementById('placeholder-view').style.display = 'block';
         document.getElementById('btn-back').style.display = 'block';
         document.getElementById('ph-title').innerText = title;
@@ -762,8 +805,11 @@
     }
 
     function switchArea(areaId, cardElement) {
-        document.querySelectorAll('.area-panel').forEach(panel => panel.classList.remove('active'));
-        document.querySelectorAll('.area-tab-card').forEach(card => card.classList.remove('active'));
+        // Busca el contenedor padre actual para no interferir entre secciones
+        let parentSection = cardElement.closest('.view-section') || document;
+        parentSection.querySelectorAll('.area-panel').forEach(panel => panel.classList.remove('active'));
+        parentSection.querySelectorAll('.area-tab-card').forEach(card => card.classList.remove('active'));
+        
         document.getElementById(areaId).classList.add('active');
         cardElement.classList.add('active');
     }
