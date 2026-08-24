@@ -57,7 +57,7 @@
             gap: 20px;
         }
 
-        /* Contenedor del Logo Clicable */
+        /* Logo Clicable */
         .logo-banner-box {
             background: #FFFFFF;
             padding: 6px 14px;
@@ -98,7 +98,7 @@
             font-weight: 700;
         }
 
-        /* Botón "Volver a Áreas" Agrandado */
+        /* Botón "Volver a Áreas" Destacado */
         .btn-back-home {
             display: none;
             background: #334155;
@@ -120,7 +120,7 @@
             box-shadow: 0 4px 10px rgba(227, 27, 35, 0.3);
         }
 
-        /* VISTA 1: LANDING PRINCIPAL DE 3 ÁREAS */
+        /* VISTA 1: LANDING PRINCIPAL CON OPCIÓN 1 DE ÍCONOS */
         #landing-view {
             padding: 40px 28px;
         }
@@ -191,16 +191,18 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.08);
         }
 
+        /* Círculos con los Íconos de la Opción 1 */
         .icon-circle {
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 20px;
             color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
         }
 
         .icon-circle.red { background: var(--valtek-red); }
@@ -466,7 +468,7 @@
             margin-bottom: 15px;
         }
 
-        /* Footer Actualizado */
+        /* Footer */
         .footer {
             background: var(--dark-bg);
             color: #94a3b8;
@@ -510,7 +512,7 @@
         <button class="btn-back-home" id="btn-back" onclick="showLanding()">← Volver a Áreas</button>
     </header>
 
-    <!-- 1. VISTA LANDING (MENÚ DE 3 ÁREAS) -->
+    <!-- 1. VISTA LANDING (OPCIÓN 1: LAPTOP / LABORATORIO / HERRAMIENTAS) -->
     <div id="landing-view">
         <div class="landing-header">
             <div class="landing-tag">Autoatención Post Venta</div>
@@ -519,23 +521,23 @@
         </div>
 
         <div class="main-areas-grid">
-            <!-- Tarjeta 1: Informática -->
+            <!-- Tarjeta 1: Informática (Laptop/Terminal) -->
             <div class="main-area-card red">
-                <div class="icon-circle red">💬</div>
+                <div class="icon-circle red">💻</div>
                 <h2 class="area-card-title">Soporte Informática</h2>
                 <p class="area-card-desc">Gestión de incidencias y requerimientos a través de nuestra plataforma ProActiveLIS.</p>
                 <button class="btn-enter-area red" onclick="showProactive()">Ingresar</button>
             </div>
 
-            <!-- Tarjeta 2: Aplicaciones -->
+            <!-- Tarjeta 2: Aplicaciones (Laboratorio Clínico) -->
             <div class="main-area-card green">
-                <div class="icon-circle green">🖥️</div>
+                <div class="icon-circle green">🧪</div>
                 <h2 class="area-card-title">Soporte Aplicaciones</h2>
                 <p class="area-card-desc">Guías y autoatención para software, configuraciones y sistemas clínicos.</p>
                 <button class="btn-enter-area green" onclick="showAplicaciones()">Ingresar</button>
             </div>
 
-            <!-- Tarjeta 3: Servicio Técnico -->
+            <!-- Tarjeta 3: Servicio Técnico (Herramientas de Mantención) -->
             <div class="main-area-card dark">
                 <div class="icon-circle dark">🛠️</div>
                 <h2 class="area-card-title">Servicio Técnico</h2>
@@ -764,7 +766,7 @@
 
     <!-- 4. VISTAS TEMPORALES (SERVICIO TÉCNICO) -->
     <div id="placeholder-view">
-        <div class="placeholder-icon" id="ph-icon">⚙️</div>
+        <div class="placeholder-icon" id="ph-icon">🛠️</div>
         <h2 class="landing-title" id="ph-title">Módulo en Desarrollo</h2>
         <p class="landing-sub">Estamos preparando las guías y contenidos para esta sección. Estará disponible próximamente.</p>
     </div>
