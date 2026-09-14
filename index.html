@@ -178,7 +178,6 @@
             font-size: 18px;
         }
 
-        /* Controles de Filtros Desplegables */
         .filters-row {
             display: flex;
             gap: 12px;
@@ -203,7 +202,6 @@
             background-position: right 12px center;
         }
 
-        /* Rejilla de Equipos */
         .equipos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -228,16 +226,17 @@
             font-weight: 800;
             padding: 4px 12px;
             border-radius: 12px;
-            text-transform: uppercase;
+            text-transform: lowercase;
             align-self: flex-start;
             margin-bottom: 12px;
         }
 
-        .equipo-title {
+        .equipo-title-exact {
             font-size: 18px;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--text-main);
             margin-bottom: 4px;
+            text-transform: lowercase;
         }
 
         .equipo-marca {
@@ -262,7 +261,7 @@
             background: #C8E6C9;
         }
 
-        /* Vista Desplegada del Equipo (AutoSCAN) */
+        /* Detalle del Equipo */
         .equipo-detail-view {
             display: none;
             background: #ffffff;
@@ -289,12 +288,14 @@
             border-radius: 12px;
             display: inline-block;
             margin-bottom: 8px;
+            text-transform: lowercase;
         }
 
-        .detail-title {
+        .detail-title-exact {
             font-size: 22px;
-            font-weight: 800;
+            font-weight: 700;
             color: #991B1B;
+            text-transform: lowercase;
         }
 
         .detail-marca {
@@ -326,8 +327,8 @@
         }
 
         .video-info-title {
-            font-size: 16px;
-            font-weight: 800;
+            font-size: 15px;
+            font-weight: 700;
             color: #881337;
             margin-bottom: 4px;
         }
@@ -335,6 +336,7 @@
         .video-info-sub {
             font-size: 12px;
             color: var(--text-sub);
+            font-family: monospace;
         }
 
         .btn-ver-video {
@@ -463,7 +465,7 @@
         
         <div class="search-container">
             <span class="search-icon">🔍</span>
-            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: Autoscan, Beckman..." onkeyup="filterEquipos()">
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan autoscan..." onkeyup="filterEquipos()">
         </div>
 
         <!-- Filtros Desplegables -->
@@ -482,11 +484,11 @@
         <!-- Catálogo de Equipos Activos -->
         <div id="equiposGrid" class="equipos-grid">
             
-            <!-- Equipo 1: MicroScan autoSCAN4 -->
+            <!-- Equipo: microscan autoscan -->
             <div class="equipo-card" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
                 <div>
-                    <span class="equipo-tag">AUTOSCAN</span>
-                    <h3 class="equipo-title">microscan autoscan</h3>
+                    <span class="equipo-tag">microscan autoscan</span>
+                    <h3 class="equipo-title-exact">microscan autoscan</h3>
                     <p class="equipo-marca">Beckman Coulter</p>
                 </div>
                 <div class="equipo-footer-badge" onclick="showEquipoDetail('autoscan')">
@@ -496,13 +498,13 @@
 
         </div>
 
-        <!-- Detalle Desplegado de AutoScan4 -->
-        <div id="detail-autoscan4" class="equipo-detail-view">
+        <!-- Detalle Desplegado del Equipo microscan autoscan -->
+        <div id="detail-autoscan" class="equipo-detail-view">
             <button class="btn-volver" onclick="hideEquipoDetail('autoscan')">← Volver al catálogo</button>
             
             <div class="detail-header">
-                <span class="detail-tag">EQUIPO · AUTOSCAN</span>
-                <h2 class="detail-title">microScan autoscan</h2>
+                <span class="detail-tag">equipo · microscan autoscan</span>
+                <h2 class="detail-title-exact">microscan autoscan</h2>
                 <p class="detail-marca">Marca: Beckman Coulter</p>
                 <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
             </div>
@@ -512,9 +514,9 @@
                 <div class="video-item">
                     <div>
                         <h4 class="video-info-title">Instalación</h4>
-                        <p class="video-info-sub">Valtek Diagnostics - microScan autoscan, Beckman Coulter</p>
+                        <p class="video-info-sub">microscan autoscan_beckman coulter_instalacion_1 de 4.mp4</p>
                     </div>
-                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_instalacion_1 de 4/microscan autoscan_beckman coulter_instalacion_1 de 4.mp4', 'Instalación - MicroScan autoSCAN4')">
+                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_instalacion_1 de 4/microscan autoscan_beckman coulter_instalacion_1 de 4.mp4', 'instalacion_1 de 4 - microscan autoscan')">
                         ▷ Ver video
                     </button>
                 </div>
@@ -523,9 +525,9 @@
                 <div class="video-item">
                     <div>
                         <h4 class="video-info-title">Mantenimiento</h4>
-                        <p class="video-info-sub">Valtek Diagnostics - MicroScan autoscan, Beckman Coulter</p>
+                        <p class="video-info-sub">microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4</p>
                     </div>
-                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_mantenimiento_2 de 4/microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4', 'Mantenimiento - MicroScan autoSCAN4')">
+                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_mantenimiento_2 de 4/microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4', 'mantenimiento_2 de 4 - microscan autoscan')">
                         ▷ Ver video
                     </button>
                 </div>
@@ -534,9 +536,9 @@
                 <div class="video-item">
                     <div>
                         <h4 class="video-info-title">Procesamiento de muestras</h4>
-                        <p class="video-info-sub">Valtek Diagnostics - MicroScan autoSCAN4, Beckman Coulter</p>
+                        <p class="video-info-sub">microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4</p>
                     </div>
-                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4', 'Procesamiento de Muestras - MicroScan autoSCAN4')">
+                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4', 'procesamiento de muestras_3 de 4 - microscan autoscan')">
                         ▷ Ver video
                     </button>
                 </div>
@@ -545,9 +547,9 @@
                 <div class="video-item">
                     <div>
                         <h4 class="video-info-title">Revisión de resultados</h4>
-                        <p class="video-info-sub">Valtek Diagnostics - microScan autoscan, Beckman Coulter</p>
+                        <p class="video-info-sub">microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4</p>
                     </div>
-                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_revision de resultados_4 de 4/microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4', 'Revisión de Resultados - MicroScan autoSCAN4')">
+                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_revision de resultados_4 de 4/microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4', 'revision de resultados_4 de 4 - microscan autoscan')">
                         ▷ Ver video
                     </button>
                 </div>
