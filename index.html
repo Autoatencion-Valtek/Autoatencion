@@ -72,7 +72,7 @@
             border: 1px solid var(--valtek-green);
         }
 
-        /* Pestañas / Bloques Superiores */
+        /* Pestañas Superiores */
         .main-nav-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -178,21 +178,29 @@
             font-size: 18px;
         }
 
+        /* Controles de Filtros Desplegables */
         .filters-row {
             display: flex;
             gap: 12px;
             margin-bottom: 24px;
         }
 
-        .filter-btn {
+        .filter-select {
             background: #E8F5E9;
             border: 1px solid #A5D6A7;
             color: #2E7D32;
-            padding: 8px 18px;
+            padding: 10px 18px;
             border-radius: 12px;
             font-size: 13px;
             font-weight: 700;
             cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            padding-right: 32px;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232E7D32' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
         }
 
         /* Rejilla de Equipos */
@@ -455,19 +463,27 @@
         
         <div class="search-container">
             <span class="search-icon">🔍</span>
-            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: Autoscan, BFT-II..." onkeyup="filterEquipos()">
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: Autoscan, Beckman..." onkeyup="filterEquipos()">
         </div>
 
+        <!-- Filtros Desplegables -->
         <div class="filters-row">
-            <button class="filter-btn">Marca ▾</button>
-            <button class="filter-btn">Línea ▾</button>
+            <select id="marcaFilter" class="filter-select" onchange="filterEquipos()">
+                <option value="">Marca: Todas</option>
+                <option value="beckman coulter">Beckman Coulter</option>
+            </select>
+
+            <select id="lineaFilter" class="filter-select" onchange="filterEquipos()">
+                <option value="">Línea: Todas</option>
+                <option value="microbiologia">Microbiología</option>
+            </select>
         </div>
 
-        <!-- Catalog de Equipos -->
+        <!-- Catálogo de Equipos Activos -->
         <div id="equiposGrid" class="equipos-grid">
             
             <!-- Equipo 1: MicroScan autoSCAN4 -->
-            <div class="equipo-card" data-nombre="microscan autoscan4 beckman coulter microbiologia">
+            <div class="equipo-card" data-nombre="microscan autoscan4" data-marca="beckman coulter" data-linea="microbiologia">
                 <div>
                     <span class="equipo-tag">AUTOSCAN</span>
                     <h3 class="equipo-title">MicroScan autoSCAN4</h3>
@@ -475,66 +491,6 @@
                 </div>
                 <div class="equipo-footer-badge" onclick="showEquipoDetail('autoscan4')">
                     Microbiología · 4 videos
-                </div>
-            </div>
-
-            <!-- Equipo 2: WalkAway 96 -->
-            <div class="equipo-card" data-nombre="microscan walkaway 96 plus beckman coulter microbiologia">
-                <div>
-                    <span class="equipo-tag">WALKAWAY 96P</span>
-                    <h3 class="equipo-title">MicroScan WalkAway 96 Plus</h3>
-                    <p class="equipo-marca">Beckman Coulter</p>
-                </div>
-                <div class="equipo-footer-badge">
-                    Microbiología · 6 videos
-                </div>
-            </div>
-
-            <!-- Equipo 3: BFT II -->
-            <div class="equipo-card" data-nombre="siemens bft ii coagulacion">
-                <div>
-                    <span class="equipo-tag">BFT-II</span>
-                    <h3 class="equipo-title">Siemens BFT II</h3>
-                    <p class="equipo-marca">Siemens</p>
-                </div>
-                <div class="equipo-footer-badge" style="background: #FEE2E2; color: #991B1B;">
-                    Coagulación · 7 videos
-                </div>
-            </div>
-
-            <!-- Equipo 4: Mindray BC-30S -->
-            <div class="equipo-card" data-nombre="mindray bc-30s hematologia">
-                <div>
-                    <span class="equipo-tag">BC-30S</span>
-                    <h3 class="equipo-title">Mindray BC-30S</h3>
-                    <p class="equipo-marca">Mindray</p>
-                </div>
-                <div class="equipo-footer-badge" style="background: #E0F2FE; color: #0369A1;">
-                    Hematología · 6 videos
-                </div>
-            </div>
-
-            <!-- Equipo 5: I-Smart 300 -->
-            <div class="equipo-card" data-nombre="i-smart 300 i-sens gases">
-                <div>
-                    <span class="equipo-tag">I-SMART 300</span>
-                    <h3 class="equipo-title">I-Smart 300</h3>
-                    <p class="equipo-marca">I-Sens</p>
-                </div>
-                <div class="equipo-footer-badge" style="background: #FEF3C7; color: #92400E;">
-                    Gases · 9 videos
-                </div>
-            </div>
-
-            <!-- Equipo 6: A1Care -->
-            <div class="equipo-card" data-nombre="a1care i-sens hba1c">
-                <div>
-                    <span class="equipo-tag">A1CARE</span>
-                    <h3 class="equipo-title">A1Care</h3>
-                    <p class="equipo-marca">I-Sens</p>
-                </div>
-                <div class="equipo-footer-badge" style="background: #F3E8FF; color: #6B21A8;">
-                    HbA1c · 2 videos
                 </div>
             </div>
 
@@ -602,7 +558,7 @@
 
 </div>
 
-<!-- Modal Player -->
+<!-- Modal Reproductor -->
 <div id="videoModal" class="modal-overlay">
     <div class="modal-content">
         <div class="modal-header">
@@ -635,12 +591,22 @@
     }
 
     function filterEquipos() {
-        let input = document.getElementById('searchInput').value.toLowerCase();
+        let textInput = document.getElementById('searchInput').value.toLowerCase();
+        let selectedMarca = document.getElementById('marcaFilter').value.toLowerCase();
+        let selectedLinea = document.getElementById('lineaFilter').value.toLowerCase();
+        
         let cards = document.querySelectorAll('.equipo-card');
 
         cards.forEach(card => {
-            let searchData = card.getAttribute('data-nombre');
-            if (searchData.includes(input)) {
+            let nombre = card.getAttribute('data-nombre').toLowerCase();
+            let marca = card.getAttribute('data-marca').toLowerCase();
+            let linea = card.getAttribute('data-linea').toLowerCase();
+
+            let matchesText = nombre.includes(textInput) || marca.includes(textInput) || linea.includes(textInput);
+            let matchesMarca = selectedMarca === "" || marca === selectedMarca;
+            let matchesLinea = selectedLinea === "" || linea === selectedLinea;
+
+            if (matchesText && matchesMarca && matchesLinea) {
                 card.style.display = 'flex';
             } else {
                 card.style.display = 'none';
@@ -653,7 +619,7 @@
         let player = document.getElementById('videoPlayer');
         let source = document.getElementById('videoSource');
         
-        source.src = videoPath;
+        source.src = encodeURI(videoPath);
         player.load();
         player.play();
         
