@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Autoatención - Valtek Informática Médica</title>
+    <title>Soporte & Autoatención - Valtek</title>
     <style>
         :root {
             --valtek-red: #E31B23;
             --valtek-green: #25C984;
             --dark-bg: #0F172A;
-            --dark-card: #1E293B;
             --light-bg: #F8FAFC;
-            --border-color: #CBD5E1;
-            --text-main: #0F172A;
+            --border-color: #E2E8F0;
+            --text-main: #1E293B;
             --text-sub: #64748B;
         }
 
@@ -26,399 +25,352 @@
         body {
             background-color: #F8FAFC;
             color: var(--text-main);
-            line-height: 1.5;
             padding: 20px;
         }
 
         .portal-container {
-            max-width: 1240px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
         }
 
-        /* Navbar Header */
+        /* Header Navbar */
         .navbar {
             background: var(--dark-bg);
-            padding: 16px 28px;
+            padding: 14px 28px;
+            border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid;
-            border-image: linear-gradient(to right, var(--valtek-red), var(--valtek-green)) 1;
+            margin-bottom: 24px;
+            border-bottom: 4px solid var(--valtek-red);
         }
 
         .brand-header {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
         }
 
-        /* Logo Clicable */
-        .logo-banner-box {
-            background: #FFFFFF;
+        .logo-box {
+            background: #ffffff;
             padding: 6px 14px;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
         }
 
-        .logo-banner-box:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-        }
-
-        .logo-banner-box img {
-            height: 60px;
-            width: auto;
+        .logo-box img {
+            height: 36px;
             display: block;
-            object-fit: contain;
-        }
-
-        .divider {
-            width: 1px;
-            height: 50px;
-            background: #334155;
         }
 
         .badge-portal {
-            background: rgba(37, 201, 132, 0.15);
             color: var(--valtek-green);
-            font-size: 12px;
-            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            background: rgba(37, 201, 132, 0.15);
+            padding: 6px 12px;
             border-radius: 20px;
             border: 1px solid var(--valtek-green);
-            font-weight: 700;
         }
 
-        /* Botón "Volver a Áreas" Destacado */
-        .btn-back-home {
-            display: none;
-            background: #334155;
-            color: #ffffff;
-            border: 2px solid #475569;
-            padding: 12px 22px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        }
-
-        .btn-back-home:hover {
-            background: var(--valtek-red);
-            border-color: var(--valtek-red);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(227, 27, 35, 0.3);
-        }
-
-        /* VISTA 1: LANDING PRINCIPAL CON OPCIÓN 1 DE ÍCONOS */
-        #landing-view {
-            padding: 40px 28px;
-        }
-
-        .landing-header {
+        /* Pestañas / Bloques Superiores */
+        .main-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             margin-bottom: 30px;
         }
 
-        .landing-tag {
-            color: var(--valtek-red);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-
-        .landing-title {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 8px;
-        }
-
-        .landing-sub {
-            font-size: 14px;
-            color: var(--text-sub);
-        }
-
-        .main-areas-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 20px;
-        }
-
-        .main-area-card {
+        .nav-card {
             background: #ffffff;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             border-radius: 12px;
-            padding: 35px 25px;
+            padding: 24px 20px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            transition: all 0.3s ease;
-            position: relative;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
         }
 
-        .main-area-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            border-radius: 12px 12px 0 0;
+        .nav-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--valtek-red);
         }
 
-        .main-area-card.red::before { background: var(--valtek-red); }
-        .main-area-card.green::before { background: var(--valtek-green); }
-        .main-area-card.dark::before { background: var(--dark-bg); }
-
-        .main-area-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        .nav-card.active {
+            border-color: var(--valtek-red);
+            box-shadow: 0 10px 20px -3px rgba(227, 27, 35, 0.15);
         }
 
-        /* Círculos con los Íconos de la Opción 1 */
-        .icon-circle {
-            width: 75px;
-            height: 75px;
+        .nav-icon {
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            margin-bottom: 20px;
+            margin: 0 auto 12px auto;
             color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+            font-size: 20px;
         }
 
-        .icon-circle.red { background: var(--valtek-red); }
-        .icon-circle.green { background: var(--valtek-green); }
-        .icon-circle.dark { background: var(--dark-bg); }
+        .icon-red { background: var(--valtek-red); }
+        .icon-green { background: var(--valtek-green); }
+        .icon-dark { background: var(--dark-bg); }
 
-        .area-card-title {
+        .nav-card-title {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .nav-card-sub {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        .btn-ingresar {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .nav-card.active .btn-ingresar {
+            background: var(--valtek-green);
+            color: #ffffff;
+            border-color: var(--valtek-green);
+        }
+
+        /* Sección Soporte Aplicaciones */
+        .area-title {
             font-size: 20px;
             font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 10px;
+            color: #15803D;
+            margin-bottom: 16px;
         }
 
-        .area-card-desc {
-            font-size: 13px;
-            color: var(--text-sub);
-            margin-bottom: 25px;
-            line-height: 1.5;
+        .search-container {
+            position: relative;
+            margin-bottom: 16px;
         }
 
-        .btn-enter-area {
+        .search-input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border-radius: 30px;
+            border: 2px solid var(--valtek-green);
+            font-size: 15px;
+            outline: none;
             background: #ffffff;
-            border: 2px solid;
-            padding: 10px 30px;
-            border-radius: 25px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-sub);
+            font-size: 18px;
+        }
+
+        .filters-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .filter-btn {
+            background: #E8F5E9;
+            border: 1px solid #A5D6A7;
+            color: #2E7D32;
+            padding: 8px 18px;
+            border-radius: 12px;
             font-size: 13px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s;
         }
 
-        .btn-enter-area.red { border-color: var(--valtek-red); color: var(--valtek-red); }
-        .btn-enter-area.red:hover { background: var(--valtek-red); color: #ffffff; }
-
-        .btn-enter-area.green { border-color: var(--valtek-green); color: var(--valtek-green); }
-        .btn-enter-area.green:hover { background: var(--valtek-green); color: #ffffff; }
-
-        .btn-enter-area.dark { border-color: var(--dark-bg); color: var(--dark-bg); }
-        .btn-enter-area.dark:hover { background: var(--dark-bg); color: #ffffff; }
-
-        /* VISTAS DETALLADAS (INFORMÁTICA Y APLICACIONES) */
-        .view-section { display: none; }
-
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1a3636 100%);
-            color: #ffffff;
-            padding: 24px 28px 18px 28px;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 24px;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-
-        .hero-sub {
-            font-size: 13.5px;
-            color: #cbd5e1;
-        }
-
-        .areas-nav-section {
-            background: #E2E8F0;
-            padding: 18px 28px;
-            border-bottom: 2px solid #CBD5E1;
-        }
-
-        .areas-grid-tabs {
+        /* Rejilla de Equipos */
+        .equipos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
-        .area-tab-card {
-            background: #ffffff;
-            border: 2px solid #CBD5E1;
-            border-radius: 10px;
-            padding: 16px;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.2s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .area-tab-card.active {
-            border-color: var(--valtek-red);
-            border-width: 3px;
-        }
-
-        .area-number-badge {
-            font-size: 10px;
-            font-weight: 800;
-            background: #F1F5F9;
-            color: #64748B;
-            padding: 2px 8px;
-            border-radius: 10px;
-            margin-bottom: 6px;
-        }
-
-        .area-tab-card.active .area-number-badge {
-            background: var(--valtek-red);
-            color: #ffffff;
-        }
-
-        .area-tab-title {
-            font-size: 15px;
-            font-weight: 800;
-        }
-
-        .area-tab-card.active .area-tab-title {
-            color: var(--valtek-red);
-        }
-
-        .area-tab-count {
-            font-size: 11px;
-            color: var(--valtek-green);
-            font-weight: 600;
-        }
-
-        .content-body {
-            padding: 28px;
-            background: var(--light-bg);
-            min-height: 400px;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 20px;
         }
 
-        .area-panel { display: none; }
-        .area-panel.active { display: grid; }
-
-        .card {
+        .equipo-card {
             background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .card-tag {
-            font-size: 10px;
-            font-weight: 700;
-            color: var(--valtek-green);
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-bottom: 8px;
+        .equipo-tag {
+            background: var(--valtek-green);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 12px;
+            text-transform: uppercase;
             align-self: flex-start;
+            margin-bottom: 12px;
         }
 
-        .card-title {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 6px;
+        .equipo-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 4px;
         }
 
-        .card-desc {
-            font-size: 12.5px;
+        .equipo-marca {
+            font-size: 13px;
             color: var(--text-sub);
-            margin-bottom: 16px;
-            flex-grow: 1;
+            margin-bottom: 20px;
         }
 
-        .card-actions {
+        .equipo-footer-badge {
+            background: #E8F5E9;
+            color: #2E7D32;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .equipo-footer-badge:hover {
+            background: #C8E6C9;
+        }
+
+        /* Vista Desplegada del Equipo (AutoSCAN) */
+        .equipo-detail-view {
+            display: none;
+            background: #ffffff;
+            border: 2px solid var(--valtek-red);
+            border-radius: 16px;
+            padding: 28px;
+            margin-top: 10px;
+            box-shadow: 0 10px 25px rgba(227, 27, 35, 0.08);
+        }
+
+        .detail-header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .detail-tag {
+            background: var(--valtek-red);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 16px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .detail-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #991B1B;
+        }
+
+        .detail-marca {
+            font-size: 14px;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+        }
+
+        .detail-subtag {
+            background: #DCFCE7;
+            color: #166534;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .video-item {
             display: flex;
-            gap: 10px;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 14px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .btn-video {
-            flex: 1;
+        .video-item:last-child {
+            border-bottom: none;
+        }
+
+        .video-info-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #881337;
+            margin-bottom: 4px;
+        }
+
+        .video-info-sub {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .btn-ver-video {
             background: var(--valtek-red);
             color: #ffffff;
             border: none;
-            padding: 9px;
-            font-size: 12px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 13px;
             font-weight: 700;
-            border-radius: 6px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s;
         }
 
-        .btn-pdf {
-            flex: 1;
-            background: #ffffff;
+        .btn-ver-video:hover {
+            background: #B91C1C;
+        }
+
+        .btn-volver {
+            background: #CBD5E1;
             color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 9px;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
             font-size: 12px;
             font-weight: 700;
-            border-radius: 6px;
-            text-align: center;
-            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 16px;
         }
 
-        /* Modal Video */
+        /* Modal Reproductor */
         .modal-overlay {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: rgba(15, 23, 42, 0.85);
             z-index: 1000;
             justify-content: center;
             align-items: center;
-            padding: 15px;
+            padding: 20px;
         }
 
         .modal-overlay.active { display: flex; }
@@ -426,7 +378,7 @@
         .modal-content {
             background: #ffffff;
             width: 100%;
-            max-width: 850px;
+            max-width: 800px;
             border-radius: 12px;
             overflow: hidden;
         }
@@ -434,7 +386,7 @@
         .modal-header {
             background: var(--dark-bg);
             color: #ffffff;
-            padding: 14px 18px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -443,407 +395,274 @@
         .close-btn {
             background: transparent;
             border: none;
-            color: #94a3b8;
+            color: #ffffff;
             font-size: 24px;
             cursor: pointer;
         }
 
         .modal-body {
-            background: #000000;
+            background: #000;
             aspect-ratio: 16/9;
+        }
+
+        .modal-body video {
             width: 100%;
-        }
-
-        .modal-body video { width: 100%; height: 100%; }
-
-        /* VISTAS TEMPORALES */
-        #placeholder-view {
-            display: none;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .placeholder-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-bg);
-            color: #94a3b8;
-            padding: 18px 28px;
-            font-size: 18px;
-            text-align: center;
-            border-top: 1px solid #1e293b;
-        }
-
-        .footer strong {
-            color: #ffffff;
-        }
-
-        /* Responsivo Móvil */
-        @media (max-width: 768px) {
-            body { padding: 8px; }
-            .navbar { flex-direction: column; gap: 14px; text-align: center; }
-            .brand-header { flex-direction: column; gap: 10px; }
-            .divider { display: none; }
-            .btn-back-home { width: 100%; }
-            .main-areas-grid { grid-template-columns: 1fr; }
-            .areas-grid-tabs { grid-template-columns: 1fr; }
-            .cards-grid { grid-template-columns: 1fr; }
-            .card-actions { flex-direction: column; }
+            height: 100%;
         }
     </style>
 </head>
 <body>
 
 <div class="portal-container">
-    <!-- Navbar Header Global -->
+    
+    <!-- Navbar Header -->
     <header class="navbar">
         <div class="brand-header">
-            <!-- Logo Valtek con enlace a Inicio -->
-            <div class="logo-banner-box" onclick="showLanding()" title="Volver a la página principal">
-                <img src="logo.png" alt="Valtek Informática Médica">
+            <div class="logo-box">
+                <img src="logo.png" alt="Valtek" onerror="this.onerror=null; this.src='https://via.placeholder.com/120x36?text=VALTEK';">
             </div>
-            <div class="divider"></div>
-            <span class="badge-portal" id="portal-badge-text">Autoatención Post Venta</span>
         </div>
-        <button class="btn-back-home" id="btn-back" onclick="showLanding()">← Volver a Áreas</button>
+        <span class="badge-portal">Portal Autoatención</span>
     </header>
 
-    <!-- 1. VISTA LANDING (OPCIÓN 1: LAPTOP / LABORATORIO / HERRAMIENTAS) -->
-    <div id="landing-view">
-        <div class="landing-header">
-            <div class="landing-tag">Autoatención Post Venta</div>
-            <h1 class="landing-title">¿En qué área necesitas ayuda?</h1>
-            <p class="landing-sub">Selecciona una opción para acceder a guías, videos y soporte guiado.</p>
+    <!-- Bloques Superiores -->
+    <section class="main-nav-grid">
+        <div class="nav-card" onclick="selectTab('informatica', this)">
+            <div class="nav-icon icon-red">💻</div>
+            <h3 class="nav-card-title">Soporte Informática</h3>
+            <p class="nav-card-sub">Gestión de incidencias y requerimientos para la plataforma ProActiveLIS.</p>
+            <button class="btn-ingresar">Ingresar</button>
         </div>
 
-        <div class="main-areas-grid">
-            <!-- Tarjeta 1: Informática (Laptop/Terminal) -->
-            <div class="main-area-card red">
-                <div class="icon-circle red">💻</div>
-                <h2 class="area-card-title">Soporte Informática</h2>
-                <p class="area-card-desc">Gestión de incidencias y requerimientos para nuestra plataforma ProActiveLIS.</p>
-                <button class="btn-enter-area red" onclick="showProactive()">Ingresar</button>
+        <div class="nav-card active" onclick="selectTab('aplicaciones', this)">
+            <div class="nav-icon icon-green">🧪</div>
+            <h3 class="nav-card-title">Soporte Aplicaciones</h3>
+            <p class="nav-card-sub">Guías y autoatención para configuración y software de nuestros sistemas de Laboratorio.</p>
+            <button class="btn-ingresar">Ingresar</button>
+        </div>
+
+        <div class="nav-card" onclick="selectTab('servicio', this)">
+            <div class="nav-icon icon-dark">🔧</div>
+            <h3 class="nav-card-title">Servicio Técnico</h3>
+            <p class="nav-card-sub">Videos y soporte para equipos, mantenciones e instalaciones en terreno.</p>
+            <button class="btn-ingresar">Ingresar</button>
+        </div>
+    </section>
+
+    <!-- Vista Soporte Aplicaciones -->
+    <section id="view-aplicaciones">
+        <h2 class="area-title">Área: Soporte Aplicaciones</h2>
+        
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: Autoscan, BFT-II..." onkeyup="filterEquipos()">
+        </div>
+
+        <div class="filters-row">
+            <button class="filter-btn">Marca ▾</button>
+            <button class="filter-btn">Línea ▾</button>
+        </div>
+
+        <!-- Catalog de Equipos -->
+        <div id="equiposGrid" class="equipos-grid">
+            
+            <!-- Equipo 1: MicroScan autoSCAN4 -->
+            <div class="equipo-card" data-nombre="microscan autoscan4 beckman coulter microbiologia">
+                <div>
+                    <span class="equipo-tag">AUTOSCAN</span>
+                    <h3 class="equipo-title">MicroScan autoSCAN4</h3>
+                    <p class="equipo-marca">Beckman Coulter</p>
+                </div>
+                <div class="equipo-footer-badge" onclick="showEquipoDetail('autoscan4')">
+                    Microbiología · 4 videos
+                </div>
             </div>
 
-            <!-- Tarjeta 2: Aplicaciones (Laboratorio Clínico) -->
-            <div class="main-area-card green">
-                <div class="icon-circle green">🧪</div>
-                <h2 class="area-card-title">Soporte Aplicaciones</h2>
-                <p class="area-card-desc">Guías y autoatención para configuración y software de nuestros sistemas de Laboratorio.</p>
-                <button class="btn-enter-area green" onclick="showAplicaciones()">Ingresar</button>
+            <!-- Equipo 2: WalkAway 96 -->
+            <div class="equipo-card" data-nombre="microscan walkaway 96 plus beckman coulter microbiologia">
+                <div>
+                    <span class="equipo-tag">WALKAWAY 96P</span>
+                    <h3 class="equipo-title">MicroScan WalkAway 96 Plus</h3>
+                    <p class="equipo-marca">Beckman Coulter</p>
+                </div>
+                <div class="equipo-footer-badge">
+                    Microbiología · 6 videos
+                </div>
             </div>
 
-            <!-- Tarjeta 3: Servicio Técnico (Herramientas de Mantención) -->
-            <div class="main-area-card dark">
-                <div class="icon-circle dark">🛠️</div>
-                <h2 class="area-card-title">Servicio Técnico</h2>
-                <p class="area-card-desc">Videos y soporte para equipos, mantenciones e instalaciones en terreno.</p>
-                <button class="btn-enter-area dark" onclick="showPlaceholder('Servicio Técnico', '🛠️')">Ingresar</button>
+            <!-- Equipo 3: BFT II -->
+            <div class="equipo-card" data-nombre="siemens bft ii coagulacion">
+                <div>
+                    <span class="equipo-tag">BFT-II</span>
+                    <h3 class="equipo-title">Siemens BFT II</h3>
+                    <p class="equipo-marca">Siemens</p>
+                </div>
+                <div class="equipo-footer-badge" style="background: #FEE2E2; color: #991B1B;">
+                    Coagulación · 7 videos
+                </div>
+            </div>
+
+            <!-- Equipo 4: Mindray BC-30S -->
+            <div class="equipo-card" data-nombre="mindray bc-30s hematologia">
+                <div>
+                    <span class="equipo-tag">BC-30S</span>
+                    <h3 class="equipo-title">Mindray BC-30S</h3>
+                    <p class="equipo-marca">Mindray</p>
+                </div>
+                <div class="equipo-footer-badge" style="background: #E0F2FE; color: #0369A1;">
+                    Hematología · 6 videos
+                </div>
+            </div>
+
+            <!-- Equipo 5: I-Smart 300 -->
+            <div class="equipo-card" data-nombre="i-smart 300 i-sens gases">
+                <div>
+                    <span class="equipo-tag">I-SMART 300</span>
+                    <h3 class="equipo-title">I-Smart 300</h3>
+                    <p class="equipo-marca">I-Sens</p>
+                </div>
+                <div class="equipo-footer-badge" style="background: #FEF3C7; color: #92400E;">
+                    Gases · 9 videos
+                </div>
+            </div>
+
+            <!-- Equipo 6: A1Care -->
+            <div class="equipo-card" data-nombre="a1care i-sens hba1c">
+                <div>
+                    <span class="equipo-tag">A1CARE</span>
+                    <h3 class="equipo-title">A1Care</h3>
+                    <p class="equipo-marca">I-Sens</p>
+                </div>
+                <div class="equipo-footer-badge" style="background: #F3E8FF; color: #6B21A8;">
+                    HbA1c · 2 videos
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Detalle Desplegado de AutoScan4 -->
+        <div id="detail-autoscan4" class="equipo-detail-view">
+            <button class="btn-volver" onclick="hideEquipoDetail('autoscan4')">← Volver al catálogo</button>
+            
+            <div class="detail-header">
+                <span class="detail-tag">EQUIPO · AUTOSCAN</span>
+                <h2 class="detail-title">MicroScan autoSCAN4</h2>
+                <p class="detail-marca">Marca: Beckman Coulter</p>
+                <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+            </div>
+
+            <div class="videos-list">
+                <!-- Video 1 -->
+                <div class="video-item">
+                    <div>
+                        <h4 class="video-info-title">Instalación</h4>
+                        <p class="video-info-sub">Valtek Diagnostics - MicroScan autoSCAN4, Beckman Coulter</p>
+                    </div>
+                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_instalacion_1 de 4/microscan autoscan_beckman coulter_instalacion_1 de 4.mp4', 'Instalación - MicroScan autoSCAN4')">
+                        ▷ Ver video
+                    </button>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-item">
+                    <div>
+                        <h4 class="video-info-title">Mantenimiento</h4>
+                        <p class="video-info-sub">Valtek Diagnostics - MicroScan autoSCAN4, Beckman Coulter</p>
+                    </div>
+                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_mantenimiento_2 de 4/microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4', 'Mantenimiento - MicroScan autoSCAN4')">
+                        ▷ Ver video
+                    </button>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-item">
+                    <div>
+                        <h4 class="video-info-title">Procesamiento de muestras</h4>
+                        <p class="video-info-sub">Valtek Diagnostics - MicroScan autoSCAN4, Beckman Coulter</p>
+                    </div>
+                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4', 'Procesamiento de Muestras - MicroScan autoSCAN4')">
+                        ▷ Ver video
+                    </button>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="video-item">
+                    <div>
+                        <h4 class="video-info-title">Revisión de resultados</h4>
+                        <p class="video-info-sub">Valtek Diagnostics - MicroScan autoSCAN4, Beckman Coulter</p>
+                    </div>
+                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_revision de resultados_4 de 4/microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4', 'Revisión de Resultados - MicroScan autoSCAN4')">
+                        ▷ Ver video
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 2. VISTA DETALLE: INFORMÁTICA -->
-    <div id="proactive-view" class="view-section">
-        <section class="hero">
-            <h1 class="hero-title">Soporte Informática — Capacitación ProActiveLIS</h1>
-            <p class="hero-sub">Selecciona un área de soporte a continuación para acceder a sus guías y cápsulas en video.</p>
-        </section>
+    </section>
 
-        <section class="areas-nav-section">
-            <div class="areas-grid-tabs">
-                <div class="area-tab-card active" onclick="switchArea('inf-area1', this)">
-                    <span class="area-number-badge">Área 01</span>
-                    <h2 class="area-tab-title">Pruebas & Prestaciones</h2>
-                    <span class="area-tab-count">7 Cápsulas disponibles</span>
-                </div>
-                <div class="area-tab-card" onclick="switchArea('inf-area2', this)">
-                    <span class="area-number-badge">Área 02</span>
-                    <h2 class="area-tab-title">Gestión de Usuarios</h2>
-                    <span class="area-tab-count">1 Cápsula disponible</span>
-                </div>
-                <div class="area-tab-card" onclick="switchArea('inf-area3', this)">
-                    <span class="area-number-badge">Área 03</span>
-                    <h2 class="area-tab-title">Etiquetadoras Zebra</h2>
-                    <span class="area-tab-count">4 Cápsulas disponibles</span>
-                </div>
-            </div>
-        </section>
-
-        <main class="content-body">
-            <!-- ÁREA 1 INFORMÁTICA -->
-            <div id="inf-area1" class="cards-grid area-panel active">
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
-                        <h3 class="card-title">Cómo crear una prueba en el sistema</h3>
-                        <p class="card-desc">Dos caminos para dar de alta un examen en ProActiveLIS. Ajuste de respuestas y fórmulas.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Cómo crear una prueba en el sistema', 'Informatica/prestaciones/1_crear_una_prueba/1_crear_una_prueba.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/prestaciones/1_crear_una_prueba/1_crear_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 02 • PRESTACIONES</span>
-                        <h3 class="card-title">Configuración de prestación simple</h3>
-                        <p class="card-desc">Crea una prestación y vincúlale un único examen. Asignación de muestra y tubo.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Configuración de prestación simple', 'Informatica/prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 03 • PERFILES</span>
-                        <h3 class="card-title">Prestaciones compuestas o perfiles</h3>
-                        <p class="card-desc">Agrupa múltiples análisis bajo un mismo perfil (ej. Perfil Tiroideo).</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Prestaciones compuestas o perfiles', 'Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 04 • VALORES BIOLÓGICOS</span>
-                        <h3 class="card-title">Añadir rangos de referencia a una prueba</h3>
-                        <p class="card-desc">Configuración de límites de normalidad por edad, sexo y tipo de muestra.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Añadir rangos de referencia', 'Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 05 • FORMATOS</span>
-                        <h3 class="card-title">Añadir decimales a una prueba específica</h3>
-                        <p class="card-desc">Ajuste del número de decimales visibles en los resultados de una prueba.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Añadir decimales a una prueba', 'Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 06 • CÁLCULOS</span>
-                        <h3 class="card-title">Configuración de pruebas tipo Fórmula</h3>
-                        <p class="card-desc">Creación de cálculos automáticos asociando alias de otras pruebas.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Pruebas tipo Fórmula', 'Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 07 • MANTENIMIENTO</span>
-                        <h3 class="card-title">Editar y actualizar valores de referencia</h3>
-                        <p class="card-desc">Modificación de rangos biológicos y valores críticos en pruebas existentes.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Editar valores de referencia', 'Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ÁREA 2 INFORMÁTICA -->
-            <div id="inf-area2" class="cards-grid area-panel">
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 01 • ACCESOS Y PERMISOS</span>
-                        <h3 class="card-title">Cómo crear un usuario en el sistema</h3>
-                        <p class="card-desc">Alta de nuevos funcionarios tomando un usuario existente como referencia.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Cómo crear un usuario', 'Informatica/usuarios/1_creacion_de_usuario_final.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/usuarios/1_creacion_de_usuario_final.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ÁREA 3 INFORMÁTICA -->
-            <div id="inf-area3" class="cards-grid area-panel">
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
-                        <h3 class="card-title">Calibrar la impresora Zebra</h3>
-                        <p class="card-desc">Ajuste de posición y calibración de densidad de impresión.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Calibrar la impresora Zebra', 'Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 02 • INSTALACIÓN</span>
-                        <h3 class="card-title">Instalación de drivers Zebra</h3>
-                        <p class="card-desc">Conexión e instalación manual de controladores en Windows.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Instalación de drivers Zebra', 'Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 03 • VINCULACIÓN</span>
-                        <h3 class="card-title">Instalación Plug and Play y archivo .ini</h3>
-                        <p class="card-desc">Vinculación de la impresora en el archivo de configuración ProActiveLIS.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Plug and Play y archivo .ini', 'Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-tag">TEMA 04 • MANTENIMIENTO</span>
-                        <h3 class="card-title">Revisión física y limpieza</h3>
-                        <p class="card-desc">Limpieza del cabezal térmico y rodillo impulsor.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Revisión física y limpieza', 'Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.mp4')">▶ Ver Video</button>
-                        <a href="Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- 3. VISTA DETALLE: APLICACIONES -->
-    <div id="aplicaciones-view" class="view-section">
-        <section class="hero">
-            <h1 class="hero-title">Soporte Aplicaciones — Equipos & Sistemas Clínicos</h1>
-            <p class="hero-sub">Guías, procedimientos operativos y capacitación en video para analizadores del laboratorio.</p>
-        </section>
-
-        <section class="areas-nav-section">
-            <div class="areas-grid-tabs">
-                <div class="area-tab-card active" onclick="switchArea('app-area1', this)">
-                    <span class="area-number-badge">Química Clínica</span>
-                    <h2 class="area-tab-title">Mindray BS-480</h2>
-                    <span class="area-tab-count">1 Cápsula disponible</span>
-                </div>
-            </div>
-        </section>
-
-        <main class="content-body">
-            <!-- ÁREA BS-480 -->
-            <div id="app-area1" class="cards-grid area-panel active">
-                <div class="card">
-                    <div>
-                        <span class="card-tag">MANTENIMIENTO • ELECTRÓDOS</span>
-                        <h3 class="card-title">Cambio de electrodos Equipo BS-480</h3>
-                        <p class="card-desc">Procedimiento paso a paso para el reemplazo, ajuste e instalación correcta de electrodos en el analizador Mindray BS-480.</p>
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn-video" onclick="openLocalVideo('Cambio de electrodos Equipo BS-480', 'Aplicaciones/BS480/cambio_electrodos.mp4')">▶ Ver Video</button>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- 4. VISTAS TEMPORALES (SERVICIO TÉCNICO) -->
-    <div id="placeholder-view">
-        <div class="placeholder-icon" id="ph-icon">🛠️</div>
-        <h2 class="landing-title" id="ph-title">Módulo en Desarrollo</h2>
-        <p class="landing-sub">Estamos preparando las guías y contenidos para esta sección. Estará disponible próximamente.</p>
-    </div>
-
-    <!-- Footer Solicitado -->
-  <footer class="footer">
-        <strong>Valtek S.A.</strong> | Mesa de Asistencia: +56981851145 | Email: postventa@valtek.cl
-   </footer>
 </div>
 
-<!-- Modal Video -->
+<!-- Modal Player -->
 <div id="videoModal" class="modal-overlay">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 id="modalTitle" class="modal-title">Cápsula en Video</h4>
-            <button class="close-btn" onclick="closeVideo()">&times;</button>
+            <h4 id="modalTitle">Reproduciendo Cápsula</h4>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
         </div>
-        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-body">
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Tu navegador no soporta el reproductor HTML5.
+            </video>
+        </div>
     </div>
 </div>
 
 <script>
-    function hideAllViews() {
-        document.getElementById('landing-view').style.display = 'none';
-        document.getElementById('proactive-view').style.display = 'none';
-        document.getElementById('aplicaciones-view').style.display = 'none';
-        document.getElementById('placeholder-view').style.display = 'none';
+    function selectTab(tabName, element) {
+        document.querySelectorAll('.nav-card').forEach(card => card.classList.remove('active'));
+        element.classList.add('active');
     }
 
-    function showLanding() {
-        hideAllViews();
-        document.getElementById('landing-view').style.display = 'block';
-        document.getElementById('btn-back').style.display = 'none';
-        document.getElementById('portal-badge-text').innerText = 'Autoatención Post Venta';
+    function showEquipoDetail(equipoId) {
+        document.getElementById('equiposGrid').style.display = 'none';
+        document.getElementById('detail-' + equipoId).style.display = 'block';
     }
 
-    function showProactive() {
-        hideAllViews();
-        document.getElementById('proactive-view').style.display = 'block';
-        document.getElementById('btn-back').style.display = 'block';
-        document.getElementById('portal-badge-text').innerText = 'Soporte Informática';
+    function hideEquipoDetail(equipoId) {
+        document.getElementById('detail-' + equipoId).style.display = 'none';
+        document.getElementById('equiposGrid').style.display = 'grid';
     }
 
-    function showAplicaciones() {
-        hideAllViews();
-        document.getElementById('aplicaciones-view').style.display = 'block';
-        document.getElementById('btn-back').style.display = 'block';
-        document.getElementById('portal-badge-text').innerText = 'Soporte Aplicaciones';
+    function filterEquipos() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.querySelectorAll('.equipo-card');
+
+        cards.forEach(card => {
+            let searchData = card.getAttribute('data-nombre');
+            if (searchData.includes(input)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     }
 
-    function showPlaceholder(title, icon) {
-        hideAllViews();
-        document.getElementById('placeholder-view').style.display = 'block';
-        document.getElementById('btn-back').style.display = 'block';
-        document.getElementById('ph-title').innerText = title;
-        document.getElementById('ph-icon').innerText = icon;
-        document.getElementById('portal-badge-text').innerText = title;
-    }
-
-    function switchArea(areaId, cardElement) {
-        let parentSection = cardElement.closest('.view-section') || document;
-        parentSection.querySelectorAll('.area-panel').forEach(panel => panel.classList.remove('active'));
-        parentSection.querySelectorAll('.area-tab-card').forEach(card => card.classList.remove('active'));
-        
-        document.getElementById(areaId).classList.add('active');
-        cardElement.classList.add('active');
-    }
-
-    function openLocalVideo(title, videoPath) {
+    function playVideo(videoPath, title) {
         document.getElementById('modalTitle').innerText = title;
-        var modalBody = document.getElementById('modalBody');
-        modalBody.innerHTML = '<video controls autoplay><source src="' + encodeURI(videoPath) + '" type="video/mp4">Tu navegador no soporta video.</video>';
+        let player = document.getElementById('videoPlayer');
+        let source = document.getElementById('videoSource');
+        
+        source.src = videoPath;
+        player.load();
+        player.play();
+        
         document.getElementById('videoModal').classList.add('active');
     }
 
-    function closeVideo() {
-        document.getElementById('modalBody').innerHTML = '';
+    function closeModal() {
+        let player = document.getElementById('videoPlayer');
+        player.pause();
         document.getElementById('videoModal').classList.remove('active');
     }
 </script>
