@@ -410,7 +410,7 @@
         }
 
         .equipo-detail-view {
-            max-width: 500px;
+            max-width: 520px;
             margin: 0 auto;
             background: #ffffff;
             border: 2px solid var(--valtek-red);
@@ -475,7 +475,7 @@
         }
 
         .video-info-title {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 800;
             color: #991B1B;
             margin-bottom: 2px;
@@ -484,6 +484,8 @@
         .video-info-sub {
             font-size: 11px;
             color: var(--text-sub);
+            max-width: 280px;
+            word-break: break-word;
         }
 
         .btn-ver-video {
@@ -598,7 +600,7 @@
         </div>
     </section>
 
-    <!-- TAB 1: SOPORTE INFORMÁTICA (PROACTIVELIS - RUTAS NATIVAS GITHUB) -->
+    <!-- TAB 1: SOPORTE INFORMÁTICA -->
     <section id="tab-informatica" class="tab-section active">
         <div class="areas-nav-section">
             <div class="areas-grid-tabs">
@@ -774,13 +776,13 @@
         </div>
     </section>
 
-    <!-- TAB 2: SOPORTE APLICACIONES (EQUIPOS) -->
+    <!-- TAB 2: SOPORTE APLICACIONES -->
     <section id="tab-aplicaciones" class="tab-section">
         <h2 class="area-title">Área: Soporte Aplicaciones</h2>
         
         <div class="search-container">
             <span class="search-icon">🔍</span>
-            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan autoscan..." onkeyup="filterEquipos()">
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan..." onkeyup="filterEquipos()">
         </div>
 
         <div class="filters-row">
@@ -795,7 +797,10 @@
             </select>
         </div>
 
+        <!-- Catálogo de Equipos -->
         <div id="equiposGrid" class="equipos-grid">
+            
+            <!-- Equipo 1: microscan autoscan -->
             <div class="equipo-card" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
                 <div>
                     <span class="equipo-tag">microscan autoscan</span>
@@ -806,8 +811,22 @@
                     Microbiología · 4 videos
                 </div>
             </div>
+
+            <!-- Equipo 2: microscan walkaway 96 plus -->
+            <div class="equipo-card" data-nombre="microscan walkaway 96 plus" data-marca="beckman coulter" data-linea="microbiologia">
+                <div>
+                    <span class="equipo-tag">microscan walkaway 96 plus</span>
+                    <h3 class="equipo-title-exact">microscan walkaway 96 plus</h3>
+                    <p class="equipo-marca">Beckman Coulter</p>
+                </div>
+                <div class="equipo-footer-badge" onclick="showEquipoDetail('walkaway')">
+                    Microbiología · 6 videos
+                </div>
+            </div>
+
         </div>
 
+        <!-- Detalle: microscan autoscan -->
         <div id="detail-autoscan" class="equipo-detail-wrapper">
             <div class="equipo-detail-view">
                 <button class="btn-volver" onclick="hideEquipoDetail('autoscan')">← Volver al catálogo</button>
@@ -859,6 +878,82 @@
                 </div>
             </div>
         </div>
+
+        <!-- Detalle: microscan walkaway 96 plus -->
+        <div id="detail-walkaway" class="equipo-detail-wrapper">
+            <div class="equipo-detail-view">
+                <button class="btn-volver" onclick="hideEquipoDetail('walkaway')">← Volver al catálogo</button>
+                
+                <div class="detail-header">
+                    <span class="detail-tag">equipo · walkaway 96 plus</span>
+                    <h2 class="detail-title-exact">microscan walkaway 96 plus</h2>
+                    <p class="detail-marca">Marca: Beckman Coulter</p>
+                    <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                </div>
+
+                <div class="videos-list">
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Mantenimiento diario</h4>
+                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6.mp4', 'mantenimiento diario - walkaway 96 plus')">
+                            ▷ Ver video
+                        </button>
+                    </div>
+
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Mantenimiento CC DG diario</h4>
+                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6.mp4', 'mantenimiento CC DG diario - walkaway 96 plus')">
+                            ▷ Ver video
+                        </button>
+                    </div>
+
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Mantenimiento semanal</h4>
+                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6.mp4', 'mantenimiento semanal - walkaway 96 plus')">
+                            ▷ Ver video
+                        </button>
+                    </div>
+
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Mantenimiento mensual disco de referencia</h4>
+                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 de 6</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 d/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 d.mp4', 'mantenimiento mensual disco de referencia')">
+                            ▷ Ver video
+                        </button>
+                    </div>
+
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Mantenimiento mensual rejilla ventilación</h4>
+                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual Rejilla Ventilación_5 de 6</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual Rejilla Ventilación_5 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual Rejilla Ventilación_5 d.mp4', 'mantenimiento mensual rejilla ventilación')">
+                            ▷ Ver video
+                        </button>
+                    </div>
+
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Desatascar un panel</h4>
+                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6/microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6.mp4', 'desatascar un panel - walkaway 96 plus')">
+                            ▷ Ver video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- TAB 3: SERVICIO TÉCNICO -->
@@ -904,6 +999,8 @@
 
     function showEquipoDetail(equipoId) {
         document.getElementById('equiposGrid').style.display = 'none';
+        
+        document.querySelectorAll('.equipo-detail-wrapper').forEach(el => el.style.display = 'none');
         document.getElementById('detail-' + equipoId).style.display = 'block';
     }
 
