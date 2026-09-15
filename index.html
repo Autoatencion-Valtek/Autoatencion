@@ -31,17 +31,24 @@
         .portal-container {
             max-width: 1200px;
             margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .main-content-padding {
+            padding: 24px;
         }
 
         /* Header Navbar */
         .navbar {
             background: var(--dark-bg);
             padding: 14px 28px;
-            border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
             border-bottom: 4px solid var(--valtek-red);
         }
 
@@ -55,6 +62,12 @@
             background: #ffffff;
             padding: 6px 14px;
             border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .logo-box:hover {
+            opacity: 0.9;
         }
 
         .logo-box img {
@@ -70,6 +83,12 @@
             padding: 6px 12px;
             border-radius: 20px;
             border: 1px solid var(--valtek-green);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .badge-portal:hover {
+            background: rgba(37, 201, 132, 0.25);
         }
 
         /* Bloques de Selección Principal */
@@ -410,7 +429,7 @@
         }
 
         .equipo-detail-view {
-            max-width: 520px;
+            max-width: 500px;
             margin: 0 auto;
             background: #ffffff;
             border: 2px solid var(--valtek-red);
@@ -484,8 +503,6 @@
         .video-info-sub {
             font-size: 11px;
             color: var(--text-sub);
-            max-width: 280px;
-            word-break: break-word;
         }
 
         .btn-ver-video {
@@ -560,6 +577,36 @@
         .modal-body video {
             width: 100%; height: 100%;
         }
+
+        /* Footer Oficial Valtek Destacado y Ampliado */
+        .footer {
+            background: var(--dark-bg);
+            color: #CBD5E1;
+            padding: 24px 28px;
+            font-size: 15px;
+            text-align: center;
+            border-top: 2px solid #334155;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-brand {
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .footer-contact-highlight {
+            color: var(--valtek-green);
+            font-weight: 800;
+            font-size: 17px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-email {
+            color: #ffffff;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -569,398 +616,409 @@
     <!-- Navbar Header -->
     <header class="navbar">
         <div class="brand-header">
-            <div class="logo-box">
+            <div class="logo-box" onclick="goHome()" title="Ir al Portal Inicial">
                 <img src="logo.png" alt="Valtek" onerror="this.onerror=null; this.src='https://via.placeholder.com/120x36?text=VALTEK';">
             </div>
         </div>
-        <span class="badge-portal">Portal Autoatención</span>
+        <span class="badge-portal" onclick="goHome()" title="Ir al Portal Inicial">Portal Autoatención</span>
     </header>
 
-    <!-- Bloques de Navegación Principal -->
-    <section class="main-nav-grid">
-        <div class="nav-card active" onclick="switchMainTab('informatica', this)">
-            <div class="nav-icon icon-red">💻</div>
-            <h3 class="nav-card-title">Soporte Informática</h3>
-            <p class="nav-card-sub">Gestión de incidencias y requerimientos para la plataforma ProActiveLIS.</p>
-            <button class="btn-ingresar">Ingresar</button>
-        </div>
-
-        <div class="nav-card" onclick="switchMainTab('aplicaciones', this)">
-            <div class="nav-icon icon-green">🧪</div>
-            <h3 class="nav-card-title">Soporte Aplicaciones</h3>
-            <p class="nav-card-sub">Guías y autoatención para configuración y software de nuestros sistemas de Laboratorio.</p>
-            <button class="btn-ingresar">Ingresar</button>
-        </div>
-
-        <div class="nav-card" onclick="switchMainTab('servicio', this)">
-            <div class="nav-icon icon-dark">🔧</div>
-            <h3 class="nav-card-title">Servicio Técnico</h3>
-            <p class="nav-card-sub">Videos y soporte para equipos, mantenciones e instalaciones en terreno.</p>
-            <button class="btn-ingresar">Ingresar</button>
-        </div>
-    </section>
-
-    <!-- TAB 1: SOPORTE INFORMÁTICA -->
-    <section id="tab-informatica" class="tab-section active">
-        <div class="areas-nav-section">
-            <div class="areas-grid-tabs">
-                <div class="area-tab-card active" onclick="switchInformaticaSubArea('area1', this)">
-                    <span class="area-number-badge">Área 01</span>
-                    <h2 class="area-tab-title">Pruebas & Prestaciones</h2>
-                    <span class="area-tab-count">7 Temas</span>
-                </div>
-                <div class="area-tab-card" onclick="switchInformaticaSubArea('area2', this)">
-                    <span class="area-number-badge">Área 02</span>
-                    <h2 class="area-tab-title">Gestión de Usuarios</h2>
-                    <span class="area-tab-count">1 Tema</span>
-                </div>
-                <div class="area-tab-card" onclick="switchInformaticaSubArea('area3', this)">
-                    <span class="area-number-badge">Área 03</span>
-                    <h2 class="area-tab-title">Etiquetadoras Zebra</h2>
-                    <span class="area-tab-count">4 Temas</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Subárea 1: Prestaciones -->
-        <div id="inf-area1" class="cards-grid area-panel active">
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
-                    <h3 class="card-title">Cómo crear una prueba en el sistema</h3>
-                    <p class="card-desc">Dos caminos para dar de alta un examen en ProActiveLIS. Ajuste de respuestas y fórmulas.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/prestaciones/1_crear_una_prueba/1_crear_una_prueba.mp4', 'Cómo crear una prueba en el sistema')">▶ Ver Video</button>
-                    <a href="Informatica/prestaciones/1_crear_una_prueba/1_crear_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 02 • PRESTACIONES</span>
-                    <h3 class="card-title">Configuración de prestación simple</h3>
-                    <p class="card-desc">Crea una prestación y vincúlale un único examen. Asignación obligatoria de muestra y contenedor.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.mp4', 'Configuración de prestación simple')">▶ Ver Video</button>
-                    <a href="Informatica/prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 03 • PERFILES</span>
-                    <h3 class="card-title">Prestaciones compuestas o perfiles</h3>
-                    <p class="card-desc">Agrupa múltiples análisis bajo un mismo perfil. Asignación masiva de muestras en un solo paso.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.mp4', 'Prestaciones compuestas o perfiles')">▶ Ver Video</button>
-                    <a href="Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 04 • VALORES BIOLÓGICOS</span>
-                    <h3 class="card-title">Añadir rangos de referencia a una prueba</h3>
-                    <p class="card-desc">Configuración de límites de normalidad por edad, sexo y tipo de muestra.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.mp4', 'Añadir rangos de referencia')">▶ Ver Video</button>
-                    <a href="Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 05 • FORMATOS</span>
-                    <h3 class="card-title">Añadir decimales a una prueba específica</h3>
-                    <p class="card-desc">Ajuste de decimales visibles en los resultados dentro de una prestación específica.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.mp4', 'Añadir decimales a una prueba')">▶ Ver Video</button>
-                    <a href="Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 06 • CÁLCULOS</span>
-                    <h3 class="card-title">Configuración de pruebas tipo Fórmula</h3>
-                    <p class="card-desc">Creación de cálculos automáticos asociando alias de otras pruebas.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.mp4', 'Configuración de pruebas tipo Fórmula')">▶ Ver Video</button>
-                    <a href="Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 07 • MANTENIMIENTO</span>
-                    <h3 class="card-title">Editar y actualizar valores de referencia</h3>
-                    <p class="card-desc">Modificación de rangos biológicos y valores críticos en pruebas existentes.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.mp4', 'Editar y actualizar valores de referencia')">▶ Ver Video</button>
-                    <a href="Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Subárea 2: Usuarios -->
-        <div id="inf-area2" class="cards-grid area-panel">
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 01 • ACCESOS Y PERMISOS</span>
-                    <h3 class="card-title">Cómo crear un usuario en el sistema</h3>
-                    <p class="card-desc">Alta de nuevos funcionarios. Configuración de credenciales, perfil y PIN.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/usuarios/1_creacion_de_usuario_final.mp4', 'Cómo crear un usuario en el sistema')">▶ Ver Video</button>
-                    <a href="Informatica/usuarios/1_creacion_de_usuario_final.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Subárea 3: Zebra -->
-        <div id="inf-area3" class="cards-grid area-panel">
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
-                    <h3 class="card-title">Calibrar la impresora de etiquetas Zebra</h3>
-                    <p class="card-desc">Ajuste de posición, detección del tamaño de etiqueta y calibración de densidad.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.mp4', 'Calibrar impresora Zebra')">▶ Ver Video</button>
-                    <a href="Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 02 • INSTALACIÓN</span>
-                    <h3 class="card-title">Instalación de drivers para impresora Zebra</h3>
-                    <p class="card-desc">Guía para conectar e instalar controladores de Windows en puerto USB.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.mp4', 'Instalación de drivers Zebra')">▶ Ver Video</button>
-                    <a href="Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 03 • VINCULACIÓN</span>
-                    <h3 class="card-title">Instalación Plug and Play y archivo .ini</h3>
-                    <p class="card-desc">Vinculación del dispositivo en el archivo de configuración .ini de ProActiveLIS.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.mp4', 'Instalación Plug and Play Zebra')">▶ Ver Video</button>
-                    <a href="Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="card-tag">TEMA 04 • MANTENIMIENTO</span>
-                    <h3 class="card-title">Revisión física y limpieza de la impresora Zebra</h3>
-                    <p class="card-desc">Pasos prácticos para limpieza del cabezal térmico y rodillo impulsor.</p>
-                </div>
-                <div class="card-actions">
-                    <button class="btn-video" onclick="playVideo('Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.mp4', 'Revisión física de impresora Zebra')">▶ Ver Video</button>
-                    <a href="Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TAB 2: SOPORTE APLICACIONES -->
-    <section id="tab-aplicaciones" class="tab-section">
-        <h2 class="area-title">Área: Soporte Aplicaciones</h2>
+    <div class="main-content-padding">
         
-        <div class="search-container">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan..." onkeyup="filterEquipos()">
-        </div>
+        <!-- Bloques de Navegación Principal -->
+        <section class="main-nav-grid">
+            <div id="nav-btn-informatica" class="nav-card active" onclick="switchMainTab('informatica', this)">
+                <div class="nav-icon icon-red">💻</div>
+                <h3 class="nav-card-title">Soporte Informática</h3>
+                <p class="nav-card-sub">Gestión de incidencias y requerimientos para la plataforma ProActiveLIS.</p>
+                <button class="btn-ingresar">Ingresar</button>
+            </div>
 
-        <div class="filters-row">
-            <select id="marcaFilter" class="filter-select" onchange="filterEquipos()">
-                <option value="">Marca: Todas</option>
-                <option value="beckman coulter">Beckman Coulter</option>
-            </select>
+            <div id="nav-btn-aplicaciones" class="nav-card" onclick="switchMainTab('aplicaciones', this)">
+                <div class="nav-icon icon-green">🧪</div>
+                <h3 class="nav-card-title">Soporte Aplicaciones</h3>
+                <p class="nav-card-sub">Guías y autoatención para configuración y software de nuestros sistemas de Laboratorio.</p>
+                <button class="btn-ingresar">Ingresar</button>
+            </div>
 
-            <select id="lineaFilter" class="filter-select" onchange="filterEquipos()">
-                <option value="">Línea: Todas</option>
-                <option value="microbiologia">Microbiología</option>
-            </select>
-        </div>
+            <div id="nav-btn-servicio" class="nav-card" onclick="switchMainTab('servicio', this)">
+                <div class="nav-icon icon-dark">🔧</div>
+                <h3 class="nav-card-title">Servicio Técnico</h3>
+                <p class="nav-card-sub">Videos y soporte para equipos, mantenciones e instalaciones en terreno.</p>
+                <button class="btn-ingresar">Ingresar</button>
+            </div>
+        </section>
 
-        <!-- Catálogo de Equipos -->
-        <div id="equiposGrid" class="equipos-grid">
+        <!-- TAB 1: SOPORTE INFORMÁTICA -->
+        <section id="tab-informatica" class="tab-section active">
+            <div class="areas-nav-section">
+                <div class="areas-grid-tabs">
+                    <div class="area-tab-card active" onclick="switchInformaticaSubArea('area1', this)">
+                        <span class="area-number-badge">Área 01</span>
+                        <h2 class="area-tab-title">Pruebas & Prestaciones</h2>
+                        <span class="area-tab-count">7 Temas</span>
+                    </div>
+                    <div class="area-tab-card" onclick="switchInformaticaSubArea('area2', this)">
+                        <span class="area-number-badge">Área 02</span>
+                        <h2 class="area-tab-title">Gestión de Usuarios</h2>
+                        <span class="area-tab-count">1 Tema</span>
+                    </div>
+                    <div class="area-tab-card" onclick="switchInformaticaSubArea('area3', this)">
+                        <span class="area-number-badge">Área 03</span>
+                        <h2 class="area-tab-title">Etiquetadoras Zebra</h2>
+                        <span class="area-tab-count">4 Temas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subárea 1: Prestaciones -->
+            <div id="inf-area1" class="cards-grid area-panel active">
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
+                        <h3 class="card-title">Cómo crear una prueba en el sistema</h3>
+                        <p class="card-desc">Dos caminos para dar de alta un examen en ProActiveLIS. Ajuste de respuestas y fórmulas.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/1_crear_una_prueba/1_crear_una_prueba.mp4', 'Cómo crear una prueba en el sistema')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/1_crear_una_prueba/1_crear_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 02 • PRESTACIONES</span>
+                        <h3 class="card-title">Configuración de prestación simple</h3>
+                        <p class="card-desc">Crea una prestación y vincúlale un único examen. Asignación obligatoria de muestra y contenedor.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.mp4', 'Configuración de prestación simple')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/2_crear_prestacion_con_una_prueba/2_crear_prestacion_con_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 03 • PERFILES</span>
+                        <h3 class="card-title">Prestaciones compuestas o perfiles</h3>
+                        <p class="card-desc">Agrupa múltiples análisis bajo un mismo perfil. Asignación masiva de muestras en un solo paso.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.mp4', 'Prestaciones compuestas o perfiles')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 04 • VALORES BIOLÓGICOS</span>
+                        <h3 class="card-title">Añadir rangos de referencia a una prueba</h3>
+                        <p class="card-desc">Configuración de límites de normalidad por edad, sexo y tipo de muestra.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.mp4', 'Añadir rangos de referencia')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 05 • FORMATOS</span>
+                        <h3 class="card-title">Añadir decimales a una prueba específica</h3>
+                        <p class="card-desc">Ajuste de decimales visibles en los resultados dentro de una prestación específica.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.mp4', 'Añadir decimales a una prueba')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 06 • CÁLCULOS</span>
+                        <h3 class="card-title">Configuración de pruebas tipo Fórmula</h3>
+                        <p class="card-desc">Creación de cálculos automáticos asociando alias de otras pruebas.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.mp4', 'Configuración de pruebas tipo Fórmula')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 07 • MANTENIMIENTO</span>
+                        <h3 class="card-title">Editar y actualizar valores de referencia</h3>
+                        <p class="card-desc">Modificación de rangos biológicos y valores críticos en pruebas existentes.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.mp4', 'Editar y actualizar valores de referencia')">▶ Ver Video</button>
+                        <a href="Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subárea 2: Usuarios -->
+            <div id="inf-area2" class="cards-grid area-panel">
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 01 • ACCESOS Y PERMISOS</span>
+                        <h3 class="card-title">Cómo crear un usuario en el sistema</h3>
+                        <p class="card-desc">Alta de nuevos funcionarios. Configuración de credenciales, perfil y PIN.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/usuarios/1_creacion_de_usuario_final.mp4', 'Cómo crear un usuario en el sistema')">▶ Ver Video</button>
+                        <a href="Informatica/usuarios/1_creacion_de_usuario_final.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subárea 3: Zebra -->
+            <div id="inf-area3" class="cards-grid area-panel">
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
+                        <h3 class="card-title">Calibrar la impresora de etiquetas Zebra</h3>
+                        <p class="card-desc">Ajuste de posición, detección del tamaño de etiqueta y calibración de densidad.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.mp4', 'Calibrar impresora Zebra')">▶ Ver Video</button>
+                        <a href="Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 02 • INSTALACIÓN</span>
+                        <h3 class="card-title">Instalación de drivers para impresora Zebra</h3>
+                        <p class="card-desc">Guía para conectar e instalar controladores de Windows en puerto USB.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.mp4', 'Instalación de drivers Zebra')">▶ Ver Video</button>
+                        <a href="Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 03 • VINCULACIÓN</span>
+                        <h3 class="card-title">Instalación Plug and Play y archivo .ini</h3>
+                        <p class="card-desc">Vinculación del dispositivo en el archivo de configuración .ini de ProActiveLIS.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.mp4', 'Instalación Plug and Play Zebra')">▶ Ver Video</button>
+                        <a href="Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 04 • MANTENIMIENTO</span>
+                        <h3 class="card-title">Revisión física y limpieza de la impresora Zebra</h3>
+                        <p class="card-desc">Pasos prácticos para limpieza del cabezal térmico y rodillo impulsor.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.mp4', 'Revisión física de impresora Zebra')">▶ Ver Video</button>
+                        <a href="Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.pdf" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: SOPORTE APLICACIONES -->
+        <section id="tab-aplicaciones" class="tab-section">
+            <h2 class="area-title">Área: Soporte Aplicaciones</h2>
             
-            <!-- Equipo 1: microscan autoscan -->
-            <div class="equipo-card" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
-                <div>
-                    <span class="equipo-tag">microscan autoscan</span>
-                    <h3 class="equipo-title-exact">microscan autoscan</h3>
-                    <p class="equipo-marca">Beckman Coulter</p>
-                </div>
-                <div class="equipo-footer-badge" onclick="showEquipoDetail('autoscan')">
-                    Microbiología · 4 videos
-                </div>
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan..." onkeyup="filterEquipos()">
             </div>
 
-            <!-- Equipo 2: microscan walkaway 96 plus -->
-            <div class="equipo-card" data-nombre="microscan walkaway 96 plus" data-marca="beckman coulter" data-linea="microbiologia">
-                <div>
-                    <span class="equipo-tag">microscan walkaway 96 plus</span>
-                    <h3 class="equipo-title-exact">microscan walkaway 96 plus</h3>
-                    <p class="equipo-marca">Beckman Coulter</p>
-                </div>
-                <div class="equipo-footer-badge" onclick="showEquipoDetail('walkaway')">
-                    Microbiología · 6 videos
-                </div>
+            <div class="filters-row">
+                <select id="marcaFilter" class="filter-select" onchange="filterEquipos()">
+                    <option value="">Marca: Todas</option>
+                    <option value="beckman coulter">Beckman Coulter</option>
+                </select>
+
+                <select id="lineaFilter" class="filter-select" onchange="filterEquipos()">
+                    <option value="">Línea: Todas</option>
+                    <option value="microbiologia">Microbiología</option>
+                </select>
             </div>
 
-        </div>
-
-        <!-- Detalle: microscan autoscan -->
-        <div id="detail-autoscan" class="equipo-detail-wrapper">
-            <div class="equipo-detail-view">
-                <button class="btn-volver" onclick="hideEquipoDetail('autoscan')">← Volver al catálogo</button>
+            <!-- Catálogo de Equipos -->
+            <div id="equiposGrid" class="equipos-grid">
                 
-                <div class="detail-header">
-                    <span class="detail-tag">equipo · autoscan</span>
-                    <h2 class="detail-title-exact">microscan autoscan</h2>
-                    <p class="detail-marca">Marca: Beckman Coulter</p>
-                    <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                <!-- Equipo 1: microscan autoscan -->
+                <div class="equipo-card" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
+                    <div>
+                        <span class="equipo-tag">microscan autoscan</span>
+                        <h3 class="equipo-title-exact">microscan autoscan</h3>
+                        <p class="equipo-marca">Beckman Coulter</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('autoscan')">
+                        Microbiología · 4 videos
+                    </div>
                 </div>
 
-                <div class="videos-list">
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Instalación</h4>
-                            <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
-                        </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_instalacion_1 de 4/microscan autoscan_beckman coulter_instalacion_1 de 4.mp4', 'instalacion - microscan autoscan')">
-                            ▷ Ver video
-                        </button>
+                <!-- Equipo 2: microscan walkaway 96 plus -->
+                <div class="equipo-card" data-nombre="microscan walkaway 96 plus" data-marca="beckman coulter" data-linea="microbiologia">
+                    <div>
+                        <span class="equipo-tag">microscan walkaway 96 plus</span>
+                        <h3 class="equipo-title-exact">microscan walkaway 96 plus</h3>
+                        <p class="equipo-marca">Beckman Coulter</p>
                     </div>
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Mantenimiento</h4>
-                            <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
-                        </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_mantenimiento_2 de 4/microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4', 'mantenimiento - microscan autoscan')">
-                            ▷ Ver video
-                        </button>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('walkaway')">
+                        Microbiología · 6 videos
                     </div>
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Procesamiento de muestras</h4>
-                            <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
-                        </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4', 'procesamiento de muestras - microscan autoscan')">
-                            ▷ Ver video
-                        </button>
+                </div>
+
+            </div>
+
+            <!-- Detalle: microscan autoscan -->
+            <div id="detail-autoscan" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('autoscan')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · autoscan</span>
+                        <h2 class="detail-title-exact">microscan autoscan</h2>
+                        <p class="detail-marca">Marca: Beckman Coulter</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
                     </div>
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Revisión de resultados</h4>
-                            <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Instalación</h4>
+                                <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_instalacion_1 de 4/microscan autoscan_beckman coulter_instalacion_1 de 4.mp4', 'instalacion - microscan autoscan')">
+                                ▷ Ver video
+                            </button>
                         </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_revision de resultados_4 de 4/microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4', 'revision de resultados - microscan autoscan')">
-                            ▷ Ver video
-                        </button>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento</h4>
+                                <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_mantenimiento_2 de 4/microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4', 'mantenimiento - microscan autoscan')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Procesamiento de muestras</h4>
+                                <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4', 'procesamiento de muestras - microscan autoscan')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Revisión de resultados</h4>
+                                <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_revision de resultados_4 de 4/microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4', 'revision de resultados - microscan autoscan')">
+                                ▷ Ver video
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Detalle: microscan walkaway 96 plus -->
-        <div id="detail-walkaway" class="equipo-detail-wrapper">
-            <div class="equipo-detail-view">
-                <button class="btn-volver" onclick="hideEquipoDetail('walkaway')">← Volver al catálogo</button>
-                
-                <div class="detail-header">
-                    <span class="detail-tag">equipo · walkaway 96 plus</span>
-                    <h2 class="detail-title-exact">microscan walkaway 96 plus</h2>
-                    <p class="detail-marca">Marca: Beckman Coulter</p>
-                    <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
-                </div>
-
-                <div class="videos-list">
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Mantenimiento diario</h4>
-                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6</p>
-                        </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6.mp4', 'mantenimiento diario - walkaway 96 plus')">
-                            ▷ Ver video
-                        </button>
+            <!-- Detalle: microscan walkaway 96 plus -->
+            <div id="detail-walkaway" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('walkaway')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · walkaway 96 plus</span>
+                        <h2 class="detail-title-exact">microscan walkaway 96 plus</h2>
+                        <p class="detail-marca">Marca: Beckman Coulter</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
                     </div>
 
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Mantenimiento CC DG diario</h4>
-                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6</p>
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento diario</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6.mp4', 'mantenimiento diario - walkaway 96 plus')">
+                                ▷ Ver video
+                            </button>
                         </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6.mp4', 'mantenimiento CC DG diario - walkaway 96 plus')">
-                            ▷ Ver video
-                        </button>
-                    </div>
 
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Mantenimiento semanal</h4>
-                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6</p>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento CC DG diario</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6.mp4', 'mantenimiento CC DG diario - walkaway 96 plus')">
+                                ▷ Ver video
+                            </button>
                         </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6.mp4', 'mantenimiento semanal - walkaway 96 plus')">
-                            ▷ Ver video
-                        </button>
-                    </div>
 
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Mantenimiento mensual disco de referencia</h4>
-                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 de 6</p>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento semanal</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6.mp4', 'mantenimiento semanal - walkaway 96 plus')">
+                                ▷ Ver video
+                            </button>
                         </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 d/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 d.mp4', 'mantenimiento mensual disco de referencia')">
-                            ▷ Ver video
-                        </button>
-                    </div>
 
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Mantenimiento mensual rejilla ventilación</h4>
-                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual Rejilla Ventilación_5 de 6</p>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento mensual disco de referencia</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 d/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 d.mp4', 'mantenimiento mensual disco de referencia')">
+                                ▷ Ver video
+                            </button>
                         </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual Rejilla Ventilación_5 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual Rejilla Ventilación_5 d.mp4', 'mantenimiento mensual rejilla ventilación')">
-                            ▷ Ver video
-                        </button>
-                    </div>
 
-                    <div class="video-item">
-                        <div>
-                            <h4 class="video-info-title">Desatascar un panel</h4>
-                            <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6</p>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento mensual rejilla ventilación</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual Rejilla Ventilación_5 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual Rejilla Ventilación_5 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual Rejilla Ventilación_5 d.mp4', 'mantenimiento mensual rejilla ventilación')">
+                                ▷ Ver video
+                            </button>
                         </div>
-                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6/microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6.mp4', 'desatascar un panel - walkaway 96 plus')">
-                            ▷ Ver video
-                        </button>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Desatascar un panel</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6/microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6.mp4', 'desatascar un panel - walkaway 96 plus')">
+                                ▷ Ver video
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- TAB 3: SERVICIO TÉCNICO -->
-    <section id="tab-servicio" class="tab-section">
-        <h2 class="area-title" style="color: var(--dark-bg);">Área: Servicio Técnico</h2>
-        <p style="color: var(--text-sub); font-size: 14px;">Módulo en preparación para el soporte técnico de equipos en terreno.</p>
-    </section>
+        <!-- TAB 3: SERVICIO TÉCNICO -->
+        <section id="tab-servicio" class="tab-section">
+            <h2 class="area-title" style="color: var(--dark-bg);">Área: Servicio Técnico</h2>
+            <p style="color: var(--text-sub); font-size: 14px;">Módulo en preparación para el soporte técnico de equipos en terreno.</p>
+        </section>
+
+    </div>
+
+    <!-- Footer Oficial Valtek Destacado y Ampliado -->
+    <footer class="footer">
+        <span class="footer-brand">Valtek S.A. — Informática Médica</span> | 
+        Mesa de Asistencia ProActiveLIS: <span class="footer-contact-highlight">+56 9 8185 1445</span> | 
+        Email: <span class="footer-email">info@valtek.cl</span>
+    </footer>
 
 </div>
 
@@ -981,6 +1039,12 @@
 </div>
 
 <script>
+    function goHome() {
+        hideEquipoDetail('autoscan');
+        hideEquipoDetail('walkaway');
+        switchMainTab('informatica', document.getElementById('nav-btn-informatica'));
+    }
+
     function switchMainTab(tabId, element) {
         document.querySelectorAll('.nav-card').forEach(card => card.classList.remove('active'));
         element.classList.add('active');
