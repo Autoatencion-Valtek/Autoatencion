@@ -261,22 +261,27 @@
             background: #C8E6C9;
         }
 
-        /* Detalle del Equipo */
-        .equipo-detail-view {
+        /* Detalle del Equipo - ANCHO REDUCIDO Y CENTRADO */
+        .equipo-detail-wrapper {
             display: none;
+            width: 100%;
+        }
+
+        .equipo-detail-view {
+            max-width: 520px;
+            margin: 0 auto;
             background: #ffffff;
             border: 2px solid var(--valtek-red);
-            border-radius: 16px;
-            padding: 28px;
-            margin-top: 10px;
-            box-shadow: 0 10px 25px rgba(227, 27, 35, 0.08);
+            border-radius: 20px;
+            padding: 24px 28px;
+            box-shadow: 0 10px 30px rgba(227, 27, 35, 0.08);
         }
 
         .detail-header {
             text-align: center;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #F1F5F9;
         }
 
         .detail-tag {
@@ -284,33 +289,35 @@
             color: #ffffff;
             font-size: 11px;
             font-weight: 800;
-            padding: 4px 16px;
-            border-radius: 12px;
+            padding: 4px 18px;
+            border-radius: 16px;
             display: inline-block;
-            margin-bottom: 8px;
-            text-transform: lowercase;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .detail-title-exact {
-            font-size: 22px;
-            font-weight: 700;
-            color: #991B1B;
+            font-size: 20px;
+            font-weight: 800;
+            color: #B91C1C;
             text-transform: lowercase;
+            margin-bottom: 2px;
         }
 
         .detail-marca {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-sub);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .detail-subtag {
             background: #DCFCE7;
-            color: #166534;
+            color: #15803D;
             font-size: 12px;
             font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 12px;
+            padding: 4px 14px;
+            border-radius: 14px;
             display: inline-block;
         }
 
@@ -318,8 +325,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
-            border-bottom: 1px solid var(--border-color);
+            padding: 14px 0;
+            border-bottom: 1px solid #F1F5F9;
         }
 
         .video-item:last-child {
@@ -328,30 +335,33 @@
 
         .video-info-title {
             font-size: 15px;
-            font-weight: 700;
-            color: #881337;
-            margin-bottom: 4px;
+            font-weight: 800;
+            color: #991B1B;
+            margin-bottom: 2px;
         }
 
         .video-info-sub {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-sub);
-            font-family: monospace;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            max-width: 280px;
+            word-break: break-word;
         }
 
         .btn-ver-video {
             background: var(--valtek-red);
             color: #ffffff;
             border: none;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 6px;
             transition: background 0.2s;
+            white-space: nowrap;
         }
 
         .btn-ver-video:hover {
@@ -359,15 +369,21 @@
         }
 
         .btn-volver {
-            background: #CBD5E1;
-            color: var(--text-main);
-            border: none;
-            padding: 8px 16px;
+            background: #F1F5F9;
+            color: var(--text-sub);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
             border-radius: 8px;
             font-size: 12px;
             font-weight: 700;
             cursor: pointer;
             margin-bottom: 16px;
+            transition: background 0.2s;
+        }
+
+        .btn-volver:hover {
+            background: #E2E8F0;
+            color: var(--text-main);
         }
 
         /* Modal Reproductor */
@@ -498,60 +514,62 @@
 
         </div>
 
-        <!-- Detalle Desplegado del Equipo microscan autoscan -->
-        <div id="detail-autoscan" class="equipo-detail-view">
-            <button class="btn-volver" onclick="hideEquipoDetail('autoscan')">← Volver al catálogo</button>
-            
-            <div class="detail-header">
-                <span class="detail-tag">equipo · microscan autoscan</span>
-                <h2 class="detail-title-exact">microscan autoscan</h2>
-                <p class="detail-marca">Marca: Beckman Coulter</p>
-                <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
-            </div>
-
-            <div class="videos-list">
-                <!-- Video 1 -->
-                <div class="video-item">
-                    <div>
-                        <h4 class="video-info-title">Instalación</h4>
-                        <p class="video-info-sub">microscan autoscan_beckman coulter_instalacion_1 de 4.mp4</p>
-                    </div>
-                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_instalacion_1 de 4/microscan autoscan_beckman coulter_instalacion_1 de 4.mp4', 'instalacion_1 de 4 - microscan autoscan')">
-                        ▷ Ver video
-                    </button>
+        <!-- Detalle Desplegado del Equipo microscan autoscan (Vista Angosta y Centrada) -->
+        <div id="detail-autoscan" class="equipo-detail-wrapper">
+            <div class="equipo-detail-view">
+                <button class="btn-volver" onclick="hideEquipoDetail('autoscan')">← Volver al catálogo</button>
+                
+                <div class="detail-header">
+                    <span class="detail-tag">equipo · autoscan</span>
+                    <h2 class="detail-title-exact">microscan autoscan</h2>
+                    <p class="detail-marca">Marca: Beckman Coulter</p>
+                    <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
                 </div>
 
-                <!-- Video 2 -->
-                <div class="video-item">
-                    <div>
-                        <h4 class="video-info-title">Mantenimiento</h4>
-                        <p class="video-info-sub">microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4</p>
+                <div class="videos-list">
+                    <!-- Video 1 -->
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Instalación</h4>
+                            <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_instalacion_1 de 4/microscan autoscan_beckman coulter_instalacion_1 de 4.mp4', 'instalacion - microscan autoscan')">
+                            ▷ Ver video
+                        </button>
                     </div>
-                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_mantenimiento_2 de 4/microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4', 'mantenimiento_2 de 4 - microscan autoscan')">
-                        ▷ Ver video
-                    </button>
-                </div>
 
-                <!-- Video 3 -->
-                <div class="video-item">
-                    <div>
-                        <h4 class="video-info-title">Procesamiento de muestras</h4>
-                        <p class="video-info-sub">microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4</p>
+                    <!-- Video 2 -->
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Mantenimiento</h4>
+                            <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_mantenimiento_2 de 4/microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4', 'mantenimiento - microscan autoscan')">
+                            ▷ Ver video
+                        </button>
                     </div>
-                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4', 'procesamiento de muestras_3 de 4 - microscan autoscan')">
-                        ▷ Ver video
-                    </button>
-                </div>
 
-                <!-- Video 4 -->
-                <div class="video-item">
-                    <div>
-                        <h4 class="video-info-title">Revisión de resultados</h4>
-                        <p class="video-info-sub">microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4</p>
+                    <!-- Video 3 -->
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Procesamiento de muestras</h4>
+                            <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4', 'procesamiento de muestras - microscan autoscan')">
+                            ▷ Ver video
+                        </button>
                     </div>
-                    <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_revision de resultados_4 de 4/microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4', 'revision de resultados_4 de 4 - microscan autoscan')">
-                        ▷ Ver video
-                    </button>
+
+                    <!-- Video 4 -->
+                    <div class="video-item">
+                        <div>
+                            <h4 class="video-info-title">Revisión de resultados</h4>
+                            <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                        </div>
+                        <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_revision de resultados_4 de 4/microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4', 'revision de resultados - microscan autoscan')">
+                            ▷ Ver video
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
