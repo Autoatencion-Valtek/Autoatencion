@@ -72,7 +72,7 @@
             border: 1px solid var(--valtek-green);
         }
 
-        /* Pestañas Superiores */
+        /* Bloques de Selección Principal */
         .main-nav-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -84,7 +84,7 @@
             background: #ffffff;
             border: 2px solid var(--border-color);
             border-radius: 12px;
-            padding: 24px 20px;
+            padding: 20px;
             text-align: center;
             cursor: pointer;
             transition: all 0.25s ease;
@@ -102,15 +102,15 @@
         }
 
         .nav-icon {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 12px auto;
+            margin: 0 auto 10px auto;
             color: #ffffff;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .icon-red { background: var(--valtek-red); }
@@ -120,20 +120,20 @@
         .nav-card-title {
             font-size: 16px;
             font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .nav-card-sub {
             font-size: 12px;
             color: var(--text-sub);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .btn-ingresar {
             background: transparent;
             border: 1px solid var(--border-color);
             color: var(--text-sub);
-            padding: 6px 20px;
+            padding: 6px 18px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 700;
@@ -146,7 +146,156 @@
             border-color: var(--valtek-green);
         }
 
-        /* Sección Soporte Aplicaciones */
+        /* Secciones del Portal */
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        /* --- ESTILOS DE INFORMÁTICA (PROACTIVELIS) --- */
+        .areas-nav-section {
+            background: #E2E8F0;
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .areas-grid-tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .area-tab-card {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .area-tab-card.active {
+            border-color: var(--valtek-red);
+            border-width: 3px;
+        }
+
+        .area-number-badge {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            background: #F1F5F9;
+            color: #64748B;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-bottom: 6px;
+            display: inline-block;
+        }
+
+        .area-tab-card.active .area-number-badge {
+            background: var(--valtek-red);
+            color: #ffffff;
+        }
+
+        .area-tab-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .area-tab-count {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--valtek-green);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .area-panel {
+            display: none;
+        }
+
+        .area-panel.active {
+            display: grid;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-tag {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--valtek-green);
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 8px;
+            align-self: flex-start;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .card-desc {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+        }
+
+        .btn-video, .btn-pdf {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-video {
+            background: var(--valtek-red);
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-pdf {
+            background: #ffffff;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        /* --- ESTILOS DE APLICACIONES (CATÁLOGO DE EQUIPOS) --- */
         .area-title {
             font-size: 20px;
             font-weight: 800;
@@ -161,10 +310,10 @@
 
         .search-input {
             width: 100%;
-            padding: 14px 20px 14px 48px;
+            padding: 12px 20px 12px 48px;
             border-radius: 30px;
             border: 2px solid var(--valtek-green);
-            font-size: 15px;
+            font-size: 14px;
             outline: none;
             background: #ffffff;
         }
@@ -175,7 +324,6 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-sub);
-            font-size: 18px;
         }
 
         .filters-row {
@@ -188,14 +336,13 @@
             background: #E8F5E9;
             border: 1px solid #A5D6A7;
             color: #2E7D32;
-            padding: 10px 18px;
+            padding: 8px 16px;
             border-radius: 12px;
             font-size: 13px;
             font-weight: 700;
             cursor: pointer;
             outline: none;
             appearance: none;
-            -webkit-appearance: none;
             padding-right: 32px;
             background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232E7D32' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
             background-repeat: no-repeat;
@@ -204,7 +351,7 @@
 
         .equipos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 20px;
         }
 
@@ -212,8 +359,7 @@
             background: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -254,33 +400,28 @@
             border-radius: 8px;
             text-align: center;
             cursor: pointer;
-            transition: background 0.2s;
         }
 
-        .equipo-footer-badge:hover {
-            background: #C8E6C9;
-        }
-
-        /* Detalle del Equipo - ANCHO REDUCIDO Y CENTRADO */
+        /* Detalle del Equipo - Vista Estrecha y Centrada */
         .equipo-detail-wrapper {
             display: none;
             width: 100%;
         }
 
         .equipo-detail-view {
-            max-width: 520px;
+            max-width: 500px;
             margin: 0 auto;
             background: #ffffff;
             border: 2px solid var(--valtek-red);
             border-radius: 20px;
-            padding: 24px 28px;
+            padding: 24px;
             box-shadow: 0 10px 30px rgba(227, 27, 35, 0.08);
         }
 
         .detail-header {
             text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 16px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
             border-bottom: 1px solid #F1F5F9;
         }
 
@@ -289,12 +430,11 @@
             color: #ffffff;
             font-size: 11px;
             font-weight: 800;
-            padding: 4px 18px;
+            padding: 4px 16px;
             border-radius: 16px;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .detail-title-exact {
@@ -308,7 +448,7 @@
         .detail-marca {
             font-size: 13px;
             color: var(--text-sub);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .detail-subtag {
@@ -325,7 +465,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #F1F5F9;
         }
 
@@ -343,9 +483,6 @@
         .video-info-sub {
             font-size: 11px;
             color: var(--text-sub);
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            max-width: 280px;
-            word-break: break-word;
         }
 
         .btn-ver-video {
@@ -357,15 +494,7 @@
             font-size: 12px;
             font-weight: 700;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: background 0.2s;
             white-space: nowrap;
-        }
-
-        .btn-ver-video:hover {
-            background: #B91C1C;
         }
 
         .btn-volver {
@@ -377,13 +506,7 @@
             font-size: 12px;
             font-weight: 700;
             cursor: pointer;
-            margin-bottom: 16px;
-            transition: background 0.2s;
-        }
-
-        .btn-volver:hover {
-            background: #E2E8F0;
-            color: var(--text-main);
+            margin-bottom: 14px;
         }
 
         /* Modal Reproductor */
@@ -432,8 +555,7 @@
         }
 
         .modal-body video {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
         }
     </style>
 </head>
@@ -451,23 +573,23 @@
         <span class="badge-portal">Portal Autoatención</span>
     </header>
 
-    <!-- Bloques Superiores -->
+    <!-- Bloques de Navegación Principal -->
     <section class="main-nav-grid">
-        <div class="nav-card" onclick="selectTab('informatica', this)">
+        <div class="nav-card active" onclick="switchMainTab('informatica', this)">
             <div class="nav-icon icon-red">💻</div>
             <h3 class="nav-card-title">Soporte Informática</h3>
             <p class="nav-card-sub">Gestión de incidencias y requerimientos para la plataforma ProActiveLIS.</p>
             <button class="btn-ingresar">Ingresar</button>
         </div>
 
-        <div class="nav-card active" onclick="selectTab('aplicaciones', this)">
+        <div class="nav-card" onclick="switchMainTab('aplicaciones', this)">
             <div class="nav-icon icon-green">🧪</div>
             <h3 class="nav-card-title">Soporte Aplicaciones</h3>
             <p class="nav-card-sub">Guías y autoatención para configuración y software de nuestros sistemas de Laboratorio.</p>
             <button class="btn-ingresar">Ingresar</button>
         </div>
 
-        <div class="nav-card" onclick="selectTab('servicio', this)">
+        <div class="nav-card" onclick="switchMainTab('servicio', this)">
             <div class="nav-icon icon-dark">🔧</div>
             <h3 class="nav-card-title">Servicio Técnico</h3>
             <p class="nav-card-sub">Videos y soporte para equipos, mantenciones e instalaciones en terreno.</p>
@@ -475,8 +597,175 @@
         </div>
     </section>
 
-    <!-- Vista Soporte Aplicaciones -->
-    <section id="view-aplicaciones">
+    <!-- TAB 1: SOPORTE INFORMÁTICA (PROACTIVELIS) -->
+    <section id="tab-informatica" class="tab-section active">
+        <div class="areas-nav-section">
+            <div class="areas-grid-tabs">
+                <div class="area-tab-card active" onclick="switchInformaticaSubArea('area1', this)">
+                    <span class="area-number-badge">Área 01</span>
+                    <h2 class="area-tab-title">Pruebas & Prestaciones</h2>
+                    <span class="area-tab-count">7 Temas</span>
+                </div>
+                <div class="area-tab-card" onclick="switchInformaticaSubArea('area2', this)">
+                    <span class="area-number-badge">Área 02</span>
+                    <h2 class="area-tab-title">Gestión de Usuarios</h2>
+                    <span class="area-tab-count">1 Tema</span>
+                </div>
+                <div class="area-tab-card" onclick="switchInformaticaSubArea('area3', this)">
+                    <span class="area-number-badge">Área 03</span>
+                    <h2 class="area-tab-title">Etiquetadoras Zebra</h2>
+                    <span class="area-tab-count">4 Temas</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subárea 1 -->
+        <div id="inf-area1" class="cards-grid area-panel active">
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
+                    <h3 class="card-title">Cómo crear una prueba en el sistema</h3>
+                    <p class="card-desc">Dos caminos para dar de alta un examen en ProActiveLIS. Ajuste de respuestas y fórmulas.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 02 • PRESTACIONES</span>
+                    <h3 class="card-title">Configuración de prestación simple</h3>
+                    <p class="card-desc">Crea una prestación y vincúlale un único examen. Asignación obligatoria de muestra y contenedor.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 03 • PERFILES</span>
+                    <h3 class="card-title">Prestaciones compuestas o perfiles</h3>
+                    <p class="card-desc">Agrupa múltiples análisis bajo un mismo perfil. Asignación masiva de muestras en un solo paso.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 04 • VALORES BIOLÓGICOS</span>
+                    <h3 class="card-title">Añadir rangos de referencia a una prueba</h3>
+                    <p class="card-desc">Configuración de límites de normalidad por edad, sexo y tipo de muestra.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 05 • FORMATOS</span>
+                    <h3 class="card-title">Añadir decimales a una prueba específica</h3>
+                    <p class="card-desc">Ajuste de decimales visibles en los resultados dentro de una prestación específica.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 06 • CÁLCULOS</span>
+                    <h3 class="card-title">Configuración de pruebas tipo Fórmula</h3>
+                    <p class="card-desc">Creación de cálculos automáticos asociando alias de otras pruebas.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 07 • MANTENIMIENTO</span>
+                    <h3 class="card-title">Editar y actualizar valores de referencia</h3>
+                    <p class="card-desc">Modificación de rangos biológicos y valores críticos en pruebas existentes.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/drive/folders/16TYqri6LfNrv4y6WVv1oG8f9m23hQKEf?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subárea 2 -->
+        <div id="inf-area2" class="cards-grid area-panel">
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 01 • ACCESOS Y PERMISOS</span>
+                    <h3 class="card-title">Cómo crear un usuario en el sistema</h3>
+                    <p class="card-desc">Alta de nuevos funcionarios. Configuración de credenciales, perfil y PIN.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/file/d/1u1Gx9MaFB8cViLW3mlSFWGpqBZKR_y4a/view?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/file/d/1_QoBAZmDLFe-e4dnXIDziv1sUI-acBe7/view?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subárea 3 -->
+        <div id="inf-area3" class="cards-grid area-panel">
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
+                    <h3 class="card-title">Calibrar la impresora de etiquetas Zebra</h3>
+                    <p class="card-desc">Ajuste de posición, detección del tamaño de etiqueta y calibración de densidad.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/file/d/1QUnhEjHPV4TUT1eHy8jS_RXG2juC4dl9/view?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/file/d/10r4zITrM2oBbYn6p5tH9Z3OkJZ78hVXd/view?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 02 • INSTALACIÓN</span>
+                    <h3 class="card-title">Instalación de drivers para impresora Zebra</h3>
+                    <p class="card-desc">Guía para conectar e instalar controladores de Windows en puerto USB.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/file/d/1WXNWyIJYdxMLQIWthAbCzI56DldrpK0A/view?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/file/d/1gBWSzraSdHnbr2vLzsecFzWH-YLVYf-K/view?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 03 • VINCULACIÓN</span>
+                    <h3 class="card-title">Instalación Plug and Play y archivo .ini</h3>
+                    <p class="card-desc">Vinculación del dispositivo en el archivo de configuración .ini de ProActiveLIS.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/file/d/1mf7cQqQGgNXLE4S24I_RgFliJ-xP0I1m/view?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/file/d/1KUipdFDyD9ThibH5J3ZWd51DwYfIKtDF/view?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="card-tag">TEMA 04 • MANTENIMIENTO</span>
+                    <h3 class="card-title">Revisión física y limpieza de la impresora Zebra</h3>
+                    <p class="card-desc">Pasos prácticos para limpieza del cabezal térmico y rodillo impulsor.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/file/d/1grv-hgM9ZQluqfnmx9Dma3AT3puFLfcI/view?usp=sharing" target="_blank" class="btn-video">▶ Ver Video</a>
+                    <a href="https://drive.google.com/file/d/1Gp42_KIcHQ76gKIiSAblZ9pKTsyh2ejL/view?usp=sharing" target="_blank" class="btn-pdf">📄 Guía PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAB 2: SOPORTE APLICACIONES (EQUIPOS) -->
+    <section id="tab-aplicaciones" class="tab-section">
         <h2 class="area-title">Área: Soporte Aplicaciones</h2>
         
         <div class="search-container">
@@ -484,7 +773,6 @@
             <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan autoscan..." onkeyup="filterEquipos()">
         </div>
 
-        <!-- Filtros Desplegables -->
         <div class="filters-row">
             <select id="marcaFilter" class="filter-select" onchange="filterEquipos()">
                 <option value="">Marca: Todas</option>
@@ -497,10 +785,7 @@
             </select>
         </div>
 
-        <!-- Catálogo de Equipos Activos -->
         <div id="equiposGrid" class="equipos-grid">
-            
-            <!-- Equipo: microscan autoscan -->
             <div class="equipo-card" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
                 <div>
                     <span class="equipo-tag">microscan autoscan</span>
@@ -511,10 +796,8 @@
                     Microbiología · 4 videos
                 </div>
             </div>
-
         </div>
 
-        <!-- Detalle Desplegado del Equipo microscan autoscan (Vista Angosta y Centrada) -->
         <div id="detail-autoscan" class="equipo-detail-wrapper">
             <div class="equipo-detail-view">
                 <button class="btn-volver" onclick="hideEquipoDetail('autoscan')">← Volver al catálogo</button>
@@ -527,7 +810,6 @@
                 </div>
 
                 <div class="videos-list">
-                    <!-- Video 1 -->
                     <div class="video-item">
                         <div>
                             <h4 class="video-info-title">Instalación</h4>
@@ -537,8 +819,6 @@
                             ▷ Ver video
                         </button>
                     </div>
-
-                    <!-- Video 2 -->
                     <div class="video-item">
                         <div>
                             <h4 class="video-info-title">Mantenimiento</h4>
@@ -548,8 +828,6 @@
                             ▷ Ver video
                         </button>
                     </div>
-
-                    <!-- Video 3 -->
                     <div class="video-item">
                         <div>
                             <h4 class="video-info-title">Procesamiento de muestras</h4>
@@ -559,8 +837,6 @@
                             ▷ Ver video
                         </button>
                     </div>
-
-                    <!-- Video 4 -->
                     <div class="video-item">
                         <div>
                             <h4 class="video-info-title">Revisión de resultados</h4>
@@ -573,7 +849,12 @@
                 </div>
             </div>
         </div>
+    </section>
 
+    <!-- TAB 3: SERVICIO TÉCNICO -->
+    <section id="tab-servicio" class="tab-section">
+        <h2 class="area-title" style="color: var(--dark-bg);">Área: Servicio Técnico</h2>
+        <p style="color: var(--text-sub); font-size: 14px;">Módulo en preparación para el soporte técnico de equipos en terreno.</p>
     </section>
 
 </div>
@@ -595,9 +876,20 @@
 </div>
 
 <script>
-    function selectTab(tabName, element) {
+    function switchMainTab(tabId, element) {
         document.querySelectorAll('.nav-card').forEach(card => card.classList.remove('active'));
         element.classList.add('active');
+
+        document.querySelectorAll('.tab-section').forEach(tab => tab.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+    }
+
+    function switchInformaticaSubArea(areaId, cardElement) {
+        document.querySelectorAll('#tab-informatica .area-panel').forEach(panel => panel.classList.remove('active'));
+        document.querySelectorAll('#tab-informatica .area-tab-card').forEach(card => card.classList.remove('active'));
+
+        document.getElementById('inf-' + areaId).classList.add('active');
+        cardElement.classList.add('active');
     }
 
     function showEquipoDetail(equipoId) {
