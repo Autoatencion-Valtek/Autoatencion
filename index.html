@@ -898,18 +898,20 @@
             
             <div class="search-container">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan..." onkeyup="filterEquipos()">
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft..." onkeyup="filterEquipos()">
             </div>
 
             <div class="filters-row">
                 <select id="marcaFilter" class="filter-select" onchange="filterEquipos()">
                     <option value="">Marca: Todas</option>
                     <option value="beckman coulter">Beckman Coulter</option>
+                    <option value="siemens">Siemens</option>
                 </select>
 
                 <select id="lineaFilter" class="filter-select" onchange="filterEquipos()">
                     <option value="">Línea: Todas</option>
                     <option value="microbiologia">Microbiología</option>
+                    <option value="coagulacion">Coagulación</option>
                 </select>
             </div>
 
@@ -937,6 +939,18 @@
                     </div>
                     <div class="equipo-footer-badge" onclick="showEquipoDetail('walkaway')">
                         Microbiología · 6 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 3: siemens bft ii (Coagulación) -->
+                <div class="equipo-card" data-nombre="siemens bft ii bft 2" data-marca="siemens" data-linea="coagulacion">
+                    <div>
+                        <span class="equipo-tag">siemens bft ii</span>
+                        <h3 class="equipo-title-exact">siemens bft ii</h3>
+                        <p class="equipo-marca">Siemens</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('bft2')" style="background: #FEE2E2; color: #991B1B;">
+                        Coagulación · 7 videos
                     </div>
                 </div>
 
@@ -1070,6 +1084,92 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Detalle: siemens bft ii (Coagulación) -->
+            <div id="detail-bft2" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('bft2')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · bft ii</span>
+                        <h2 class="detail-title-exact">siemens bft ii</h2>
+                        <p class="detail-marca">Marca: Siemens</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Descripción y encendido</h4>
+                                <p class="video-info-sub">1_BFT II_Descripción y encendido</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/1_BFT II_Descripción y encendido/1_BFT II_Descripción y encendido.mp4', 'Descripción y encendido - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantención diaria y según necesidad</h4>
+                                <p class="video-info-sub">2_BFT II_Mantención Diaria y según necesidad</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/2_BFT II_Mantención Diaria y según necesidad/2_BFT II_Mantención Diaria y según necesidad.mp4', 'Mantención diaria y según necesidad - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Insumos</h4>
+                                <p class="video-info-sub">3_BFT II_Insumos</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/3_BFT II_Insumos/3_BFT II_Insumos.mp4', 'Insumos - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Calibración TP (Parte 1)</h4>
+                                <p class="video-info-sub">4_BFT II_Calibración TP_Parte 1</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/4_BFT II_Calibración TP_Parte 1/4_BFT II_Calibración TP_Parte 1.mp4', 'Calibración TP Parte 1 - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Calibración TP (Parte 2)</h4>
+                                <p class="video-info-sub">4_BFT II_Calibración TP_Parte 2</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/4_BFT II_Calibración TP_Parte 2/4_BFT II_Calibración TP_Parte 2.mp4', 'Calibración TP Parte 2 - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Procesamiento de muestras y controles</h4>
+                                <p class="video-info-sub">5_BFT II_Procesamiento de muestras y controles</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/5_BFT II_Procesamiento de muestras y controles/5_BFT II_Procesamiento de muestras y controles.mp4', 'Procesamiento de muestras y controles - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Cómo poner papel térmico en impresora interna</h4>
+                                <p class="video-info-sub">6_BFT II_Cómo poner papel térmico en impresora interna</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/6_BFT II_Cómo poner papel térmico en impresora interna/6_BFT II_Cómo poner papel térmico en impresora interna.mp4', 'Cambio de papel térmico - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- TAB 3: SERVICIO TÉCNICO -->
@@ -1111,6 +1211,7 @@
     function goHome() {
         hideEquipoDetail('autoscan');
         hideEquipoDetail('walkaway');
+        hideEquipoDetail('bft2');
         switchMainTab('informatica', document.getElementById('nav-btn-informatica'));
     }
 
