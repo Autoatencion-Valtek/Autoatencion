@@ -625,7 +625,7 @@
             color: #475569;
         }
 
-        /* REGLETA DE RESPONSIVIDAD PARA MÓVILES (SMARTPHONES Y TABLETS) */
+        /* REGLETA DE RESPONSIVIDAD PARA MÓVILES */
         @media (max-width: 768px) {
             body {
                 padding: 6px;
@@ -898,7 +898,7 @@
             
             <div class="search-container">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft..." onkeyup="filterEquipos()">
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft, mindray..." onkeyup="filterEquipos()">
             </div>
 
             <div class="filters-row">
@@ -906,12 +906,14 @@
                     <option value="">Marca: Todas</option>
                     <option value="beckman coulter">Beckman Coulter</option>
                     <option value="siemens">Siemens</option>
+                    <option value="mindray">Mindray</option>
                 </select>
 
                 <select id="lineaFilter" class="filter-select" onchange="filterEquipos()">
                     <option value="">Línea: Todas</option>
                     <option value="microbiologia">Microbiología</option>
                     <option value="coagulacion">Coagulación</option>
+                    <option value="quimica">Química</option>
                 </select>
             </div>
 
@@ -951,6 +953,18 @@
                     </div>
                     <div class="equipo-footer-badge" onclick="showEquipoDetail('bft2')" style="background: #FEE2E2; color: #991B1B;">
                         Coagulación · 7 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 4: mindray serie bs (Química) -->
+                <div class="equipo-card" data-nombre="mindray serie bs bs-480 bs480 quimica" data-marca="mindray" data-linea="quimica">
+                    <div>
+                        <span class="equipo-tag">mindray serie bs</span>
+                        <h3 class="equipo-title-exact">mindray serie bs</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraybs')" style="background: #E0F2FE; color: #0369A1;">
+                        Química · 7 videos
                     </div>
                 </div>
 
@@ -1170,6 +1184,92 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Detalle: mindray serie bs (Química) -->
+            <div id="detail-mindraybs" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('mindraybs')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · serie bs</span>
+                        <h2 class="detail-title-exact">mindray serie bs</h2>
+                        <p class="detail-marca">Marca: Mindray</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Cambio de electrodos BS-480</h4>
+                                <p class="video-info-sub">Mindray BS_Cambio de electrodos BS-480</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Quimica/Mindray BS_Cambio de electrodos BS-480/Mindray BS - Cambio de electrodos BS-480.mp4', 'Cambio de electrodos BS-480 - Mindray BS')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Cambio de Lámpara serie BS Mindray</h4>
+                                <p class="video-info-sub">Mindray BS_Cambio de Lámpara serie BS Mindray</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Quimica/Mindray BS_Cambio de Lámpara serie BS Mindray/Mindray BS_Cambio de Lámpara serie BS Mindray.mp4', 'Cambio de Lámpara - Mindray BS')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Cambio de aguja, línea BS Mindray</h4>
+                                <p class="video-info-sub">Mindray BS_Cambio de aguja, línea BS Mindray</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Quimica/Mindray BS_Cambio de aguja, línea BS Mindray/Mindray BS_Cambio de aguja, línea BS Mindray.mp4', 'Cambio de aguja - Mindray BS')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Cambio de filtro metálico BS-480/600/800 Mindray</h4>
+                                <p class="video-info-sub">Mindray BS_Cambio de filtro metálico BS-480/600/800 Mindray</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Quimica/Mindray BS_Cambio de filtro metálico BS-480%2F600%2F800 Mindray/Mindray BS_Cambio de filtro metálico BS-480%2F600%2F800 Mindray.mp4', 'Cambio de filtro metálico - Mindray BS')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Cambio de jeringa línea BS Mindray</h4>
+                                <p class="video-info-sub">Mindray BS_Cambio de jeringa línea BS Mindray</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Quimica/Mindray BS_Cambio de jeringa línea BS Mindray/Mindray BS_Cambio de jeringa línea BS Mindray.mp4', 'Cambio de jeringa - Mindray BS')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Cambio tuberías peristálticas línea BS Mindray</h4>
+                                <p class="video-info-sub">Mindray BS_Cambio tuberías peristálticas línea BS Mindray</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Quimica/Mindray BS_Cambio tuberías peristálticas línea BS Mindray/BS Mindray_Cambio tuberías peristálticas línea BS Mindray.mp4', 'Cambio tuberías peristálticas - Mindray BS')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantención equipo Ósmosis Inversa</h4>
+                                <p class="video-info-sub">Mindray BS_Mantención equipo Osmosis Inversa</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Quimica/Mindray BS_Mantención equipo Osmosis Inversa/Mindray BS_Mantención equipo Osmosis Inversa.mp4', 'Mantención Ósmosis Inversa - Mindray BS')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- TAB 3: SERVICIO TÉCNICO -->
@@ -1212,6 +1312,7 @@
         hideEquipoDetail('autoscan');
         hideEquipoDetail('walkaway');
         hideEquipoDetail('bft2');
+        hideEquipoDetail('mindraybs');
         switchMainTab('informatica', document.getElementById('nav-btn-informatica'));
     }
 
