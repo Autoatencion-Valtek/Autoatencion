@@ -62,7 +62,7 @@
 
         .logo-box {
             background: #ffffff;
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 8px;
             cursor: pointer;
             transition: opacity 0.2s;
@@ -72,8 +72,9 @@
             opacity: 0.9;
         }
 
+        /* LOGO 150% MÁS GRANDE (32px -> 48px) */
         .logo-box img {
-            height: 32px;
+            height: 48px;
             width: auto;
             display: block;
         }
@@ -393,30 +394,18 @@
             justify-content: space-between;
         }
 
-        .equipo-tag {
-            background: var(--valtek-green);
-            color: #ffffff;
-            font-size: 10.5px;
-            font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 12px;
-            text-transform: lowercase;
-            align-self: flex-start;
-            margin-bottom: 10px;
-        }
-
         .equipo-title-exact {
-            font-size: 17px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             color: var(--text-main);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             text-transform: lowercase;
         }
 
         .equipo-marca {
-            font-size: 12.5px;
+            font-size: 13px;
             color: var(--text-sub);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .equipo-footer-badge {
@@ -684,7 +673,7 @@
     <header class="navbar">
         <div class="brand-header">
             <div class="logo-box" onclick="goHome()" title="Ir al Portal Inicial">
-                <img src="logo.png" alt="Valtek" onerror="this.onerror=null; this.src='https://via.placeholder.com/120x36?text=VALTEK';">
+                <img src="logo.png" alt="Valtek" onerror="this.onerror=null; this.src='https://via.placeholder.com/180x48?text=VALTEK';">
             </div>
         </div>
         <span class="badge-portal" onclick="goHome()" title="Ir al Portal Inicial">Portal Autoatención</span>
@@ -694,7 +683,7 @@
         
         <!-- Bloques de Navegación Principal -->
         <section class="main-nav-grid">
-            <div id="nav-btn-informatica" class="nav-card active" onclick="switchMainTab('informatica', this)">
+            <div id="nav-btn-informatica" class="nav-card active" onclick="goHome()">
                 <div class="nav-icon icon-red">💻</div>
                 <h3 class="nav-card-title">Soporte Informática</h3>
                 <p class="nav-card-sub">Gestión de incidencias y requerimientos para la plataforma ProActiveLIS.</p>
@@ -898,7 +887,7 @@
             
             <div class="search-container">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInputApp" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft..." onkeyup="filterEquiposApp()">
+                <input type="text" id="searchInputApp" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft, sysmex..." onkeyup="filterEquiposApp()">
             </div>
 
             <div class="filters-row">
@@ -906,12 +895,14 @@
                     <option value="">Marca: Todas</option>
                     <option value="beckman coulter">Beckman Coulter</option>
                     <option value="siemens">Siemens</option>
+                    <option value="sysmex">Sysmex</option>
                 </select>
 
                 <select id="lineaFilterApp" class="filter-select" onchange="filterEquiposApp()">
                     <option value="">Línea: Todas</option>
                     <option value="microbiologia">Microbiología</option>
                     <option value="coagulacion">Coagulación</option>
+                    <option value="orinas">Orinas</option>
                 </select>
             </div>
 
@@ -921,7 +912,6 @@
                 <!-- Equipo 1: microscan autoscan -->
                 <div class="equipo-card equipo-card-app" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
                     <div>
-                        <span class="equipo-tag">microscan autoscan</span>
                         <h3 class="equipo-title-exact">microscan autoscan</h3>
                         <p class="equipo-marca">Beckman Coulter</p>
                     </div>
@@ -933,7 +923,6 @@
                 <!-- Equipo 2: microscan walkaway 96 plus -->
                 <div class="equipo-card equipo-card-app" data-nombre="microscan walkaway 96 plus" data-marca="beckman coulter" data-linea="microbiologia">
                     <div>
-                        <span class="equipo-tag">microscan walkaway 96 plus</span>
                         <h3 class="equipo-title-exact">microscan walkaway 96 plus</h3>
                         <p class="equipo-marca">Beckman Coulter</p>
                     </div>
@@ -945,12 +934,22 @@
                 <!-- Equipo 3: siemens bft ii (Coagulación) -->
                 <div class="equipo-card equipo-card-app" data-nombre="siemens bft ii bft 2" data-marca="siemens" data-linea="coagulacion">
                     <div>
-                        <span class="equipo-tag">siemens bft ii</span>
                         <h3 class="equipo-title-exact">siemens bft ii</h3>
                         <p class="equipo-marca">Siemens</p>
                     </div>
                     <div class="equipo-footer-badge" onclick="showEquipoDetail('bft2')" style="background: #FEE2E2; color: #991B1B;">
                         Coagulación · 7 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 4: sysmex uc-3500 (Orinas) -->
+                <div class="equipo-card equipo-card-app" data-nombre="sysmex uc-3500 uc3500 orinas" data-marca="sysmex" data-linea="orinas">
+                    <div>
+                        <h3 class="equipo-title-exact">sysmex uc-3500</h3>
+                        <p class="equipo-marca">Sysmex</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('sysmexuc3500')" style="background: #FEF3C7; color: #92400E;">
+                        Orinas · 2 videos
                     </div>
                 </div>
 
@@ -1170,9 +1169,46 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Detalle: sysmex uc-3500 (Orinas) -->
+            <div id="detail-sysmexuc3500" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('sysmexuc3500', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · uc-3500</span>
+                        <h2 class="detail-title-exact">sysmex uc-3500</h2>
+                        <p class="detail-marca">Marca: Sysmex</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Carga de tiras</h4>
+                                <p class="video-info-sub">Sysmex UC-3500_Carga de tiras</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-3500_Carga de tiras/Sysmex UC-3500_Carga de tiras.mp4', 'Carga de tiras - Sysmex UC-3500')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento</h4>
+                                <p class="video-info-sub">Sysmex UC-3500_Mantenimiento</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-3500_Mantenimiento/Sysmex UC-3500_Mantenimiento.mp4', 'Mantenimiento - Sysmex UC-3500')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
-        <!-- TAB 3: SERVICIO TÉCNICO (MÓDULO DE MANTENCIONES EN TERRENO) -->
+        <!-- TAB 3: SERVICIO TÉCNICO -->
         <section id="tab-servicio" class="tab-section">
             <h2 class="area-title" style="color: var(--dark-bg);">Área: Servicio Técnico</h2>
             
@@ -1196,10 +1232,9 @@
             <!-- Catálogo de Servicio Técnico -->
             <div id="equiposGridSvc" class="equipos-grid">
                 
-                <!-- Equipo Mindray Serie BS en Servicio Técnico -->
+                <!-- Equipo Mindray Serie BS en Servicio Técnico (Sin tags ni fondos adicionales) -->
                 <div class="equipo-card equipo-card-svc" data-nombre="mindray serie bs bs-480 bs480 quimica" data-marca="mindray" data-linea="quimica">
                     <div>
-                        <span class="equipo-tag" style="background: var(--dark-bg);">mindray serie bs</span>
                         <h3 class="equipo-title-exact">mindray serie bs</h3>
                         <p class="equipo-marca">Mindray · Servicio Técnico</p>
                     </div>
@@ -1331,6 +1366,7 @@
         hideEquipoDetail('autoscan', 'equiposGridApp');
         hideEquipoDetail('walkaway', 'equiposGridApp');
         hideEquipoDetail('bft2', 'equiposGridApp');
+        hideEquipoDetail('sysmexuc3500', 'equiposGridApp');
         hideEquipoDetail('mindraybs', 'equiposGridSvc');
         switchMainTab('informatica', document.getElementById('nav-btn-informatica'));
     }
