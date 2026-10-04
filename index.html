@@ -320,7 +320,7 @@
             border: 1px solid var(--border-color);
         }
 
-        /* --- ESTILOS DE APLICACIONES (CATÁLOGO DE EQUIPOS) --- */
+        /* --- ESTILOS DE CATÁLOGO Y EQUIPOS --- */
         .area-title {
             font-size: 18px;
             font-weight: 800;
@@ -898,30 +898,28 @@
             
             <div class="search-container">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft, mindray..." onkeyup="filterEquipos()">
+                <input type="text" id="searchInputApp" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft..." onkeyup="filterEquiposApp()">
             </div>
 
             <div class="filters-row">
-                <select id="marcaFilter" class="filter-select" onchange="filterEquipos()">
+                <select id="marcaFilterApp" class="filter-select" onchange="filterEquiposApp()">
                     <option value="">Marca: Todas</option>
                     <option value="beckman coulter">Beckman Coulter</option>
                     <option value="siemens">Siemens</option>
-                    <option value="mindray">Mindray</option>
                 </select>
 
-                <select id="lineaFilter" class="filter-select" onchange="filterEquipos()">
+                <select id="lineaFilterApp" class="filter-select" onchange="filterEquiposApp()">
                     <option value="">Línea: Todas</option>
                     <option value="microbiologia">Microbiología</option>
                     <option value="coagulacion">Coagulación</option>
-                    <option value="quimica">Química</option>
                 </select>
             </div>
 
-            <!-- Catálogo de Equipos -->
-            <div id="equiposGrid" class="equipos-grid">
+            <!-- Catálogo de Equipos de Aplicaciones -->
+            <div id="equiposGridApp" class="equipos-grid">
                 
                 <!-- Equipo 1: microscan autoscan -->
-                <div class="equipo-card" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
+                <div class="equipo-card equipo-card-app" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
                     <div>
                         <span class="equipo-tag">microscan autoscan</span>
                         <h3 class="equipo-title-exact">microscan autoscan</h3>
@@ -933,7 +931,7 @@
                 </div>
 
                 <!-- Equipo 2: microscan walkaway 96 plus -->
-                <div class="equipo-card" data-nombre="microscan walkaway 96 plus" data-marca="beckman coulter" data-linea="microbiologia">
+                <div class="equipo-card equipo-card-app" data-nombre="microscan walkaway 96 plus" data-marca="beckman coulter" data-linea="microbiologia">
                     <div>
                         <span class="equipo-tag">microscan walkaway 96 plus</span>
                         <h3 class="equipo-title-exact">microscan walkaway 96 plus</h3>
@@ -945,7 +943,7 @@
                 </div>
 
                 <!-- Equipo 3: siemens bft ii (Coagulación) -->
-                <div class="equipo-card" data-nombre="siemens bft ii bft 2" data-marca="siemens" data-linea="coagulacion">
+                <div class="equipo-card equipo-card-app" data-nombre="siemens bft ii bft 2" data-marca="siemens" data-linea="coagulacion">
                     <div>
                         <span class="equipo-tag">siemens bft ii</span>
                         <h3 class="equipo-title-exact">siemens bft ii</h3>
@@ -956,24 +954,12 @@
                     </div>
                 </div>
 
-                <!-- Equipo 4: mindray serie bs (Química) -->
-                <div class="equipo-card" data-nombre="mindray serie bs bs-480 bs480 quimica" data-marca="mindray" data-linea="quimica">
-                    <div>
-                        <span class="equipo-tag">mindray serie bs</span>
-                        <h3 class="equipo-title-exact">mindray serie bs</h3>
-                        <p class="equipo-marca">Mindray</p>
-                    </div>
-                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraybs')" style="background: #E0F2FE; color: #0369A1;">
-                        Química · 7 videos
-                    </div>
-                </div>
-
             </div>
 
             <!-- Detalle: microscan autoscan -->
             <div id="detail-autoscan" class="equipo-detail-wrapper">
                 <div class="equipo-detail-view">
-                    <button class="btn-volver" onclick="hideEquipoDetail('autoscan')">← Volver al catálogo</button>
+                    <button class="btn-volver" onclick="hideEquipoDetail('autoscan', 'equiposGridApp')">← Volver al catálogo</button>
                     
                     <div class="detail-header">
                         <span class="detail-tag">equipo · autoscan</span>
@@ -1026,7 +1012,7 @@
             <!-- Detalle: microscan walkaway 96 plus -->
             <div id="detail-walkaway" class="equipo-detail-wrapper">
                 <div class="equipo-detail-view">
-                    <button class="btn-volver" onclick="hideEquipoDetail('walkaway')">← Volver al catálogo</button>
+                    <button class="btn-volver" onclick="hideEquipoDetail('walkaway', 'equiposGridApp')">← Volver al catálogo</button>
                     
                     <div class="detail-header">
                         <span class="detail-tag">equipo · walkaway 96 plus</span>
@@ -1102,7 +1088,7 @@
             <!-- Detalle: siemens bft ii (Coagulación) -->
             <div id="detail-bft2" class="equipo-detail-wrapper">
                 <div class="equipo-detail-view">
-                    <button class="btn-volver" onclick="hideEquipoDetail('bft2')">← Volver al catálogo</button>
+                    <button class="btn-volver" onclick="hideEquipoDetail('bft2', 'equiposGridApp')">← Volver al catálogo</button>
                     
                     <div class="detail-header">
                         <span class="detail-tag">equipo · bft ii</span>
@@ -1184,17 +1170,56 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Detalle: mindray serie bs (Química) -->
+        <!-- TAB 3: SERVICIO TÉCNICO (MÓDULO DE MANTENCIONES EN TERRENO) -->
+        <section id="tab-servicio" class="tab-section">
+            <h2 class="area-title" style="color: var(--dark-bg);">Área: Servicio Técnico</h2>
+            
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInputSvc" class="search-input" placeholder="Buscar por equipo o mantención, ej: mindray, osmosis..." onkeyup="filterEquiposSvc()">
+            </div>
+
+            <div class="filters-row">
+                <select id="marcaFilterSvc" class="filter-select" onchange="filterEquiposSvc()">
+                    <option value="">Marca: Todas</option>
+                    <option value="mindray">Mindray</option>
+                </select>
+
+                <select id="lineaFilterSvc" class="filter-select" onchange="filterEquiposSvc()">
+                    <option value="">Línea: Todas</option>
+                    <option value="quimica">Química</option>
+                </select>
+            </div>
+
+            <!-- Catálogo de Servicio Técnico -->
+            <div id="equiposGridSvc" class="equipos-grid">
+                
+                <!-- Equipo Mindray Serie BS en Servicio Técnico -->
+                <div class="equipo-card equipo-card-svc" data-nombre="mindray serie bs bs-480 bs480 quimica" data-marca="mindray" data-linea="quimica">
+                    <div>
+                        <span class="equipo-tag" style="background: var(--dark-bg);">mindray serie bs</span>
+                        <h3 class="equipo-title-exact">mindray serie bs</h3>
+                        <p class="equipo-marca">Mindray · Servicio Técnico</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraybs')" style="background: #E0F2FE; color: #0369A1;">
+                        Química · 7 videos
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Detalle: mindray serie bs (Servicio Técnico) -->
             <div id="detail-mindraybs" class="equipo-detail-wrapper">
                 <div class="equipo-detail-view">
-                    <button class="btn-volver" onclick="hideEquipoDetail('mindraybs')">← Volver al catálogo</button>
+                    <button class="btn-volver" onclick="hideEquipoDetail('mindraybs', 'equiposGridSvc')">← Volver al catálogo</button>
                     
                     <div class="detail-header">
-                        <span class="detail-tag">equipo · serie bs</span>
+                        <span class="detail-tag" style="background: var(--dark-bg);">servicio técnico · serie bs</span>
                         <h2 class="detail-title-exact">mindray serie bs</h2>
                         <p class="detail-marca">Marca: Mindray</p>
-                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                        <span class="detail-subtag">Soporte Técnico & Mantenciones</span>
                     </div>
 
                     <div class="videos-list">
@@ -1272,12 +1297,6 @@
             </div>
         </section>
 
-        <!-- TAB 3: SERVICIO TÉCNICO -->
-        <section id="tab-servicio" class="tab-section">
-            <h2 class="area-title" style="color: var(--dark-bg);">Área: Servicio Técnico</h2>
-            <p style="color: var(--text-sub); font-size: 13.5px;">Módulo en preparación para el soporte técnico de equipos en terreno.</p>
-        </section>
-
     </div>
 
     <!-- Footer Oficial Valtek -->
@@ -1309,10 +1328,10 @@
 
 <script>
     function goHome() {
-        hideEquipoDetail('autoscan');
-        hideEquipoDetail('walkaway');
-        hideEquipoDetail('bft2');
-        hideEquipoDetail('mindraybs');
+        hideEquipoDetail('autoscan', 'equiposGridApp');
+        hideEquipoDetail('walkaway', 'equiposGridApp');
+        hideEquipoDetail('bft2', 'equiposGridApp');
+        hideEquipoDetail('mindraybs', 'equiposGridSvc');
         switchMainTab('informatica', document.getElementById('nav-btn-informatica'));
     }
 
@@ -1333,23 +1352,52 @@
     }
 
     function showEquipoDetail(equipoId) {
-        document.getElementById('equiposGrid').style.display = 'none';
+        document.getElementById('equiposGridApp').style.display = 'none';
+        document.getElementById('equiposGridSvc').style.display = 'none';
         
         document.querySelectorAll('.equipo-detail-wrapper').forEach(el => el.style.display = 'none');
         document.getElementById('detail-' + equipoId).style.display = 'block';
     }
 
-    function hideEquipoDetail(equipoId) {
+    function hideEquipoDetail(equipoId, targetGridId) {
         document.getElementById('detail-' + equipoId).style.display = 'none';
-        document.getElementById('equiposGrid').style.display = 'grid';
+        if (targetGridId) {
+            document.getElementById(targetGridId).style.display = 'grid';
+        } else {
+            document.getElementById('equiposGridApp').style.display = 'grid';
+        }
     }
 
-    function filterEquipos() {
-        let textInput = document.getElementById('searchInput').value.toLowerCase();
-        let selectedMarca = document.getElementById('marcaFilter').value.toLowerCase();
-        let selectedLinea = document.getElementById('lineaFilter').value.toLowerCase();
+    function filterEquiposApp() {
+        let textInput = document.getElementById('searchInputApp').value.toLowerCase();
+        let selectedMarca = document.getElementById('marcaFilterApp').value.toLowerCase();
+        let selectedLinea = document.getElementById('lineaFilterApp').value.toLowerCase();
         
-        let cards = document.querySelectorAll('.equipo-card');
+        let cards = document.querySelectorAll('.equipo-card-app');
+
+        cards.forEach(card => {
+            let nombre = card.getAttribute('data-nombre').toLowerCase();
+            let marca = card.getAttribute('data-marca').toLowerCase();
+            let linea = card.getAttribute('data-linea').toLowerCase();
+
+            let matchesText = nombre.includes(textInput) || marca.includes(textInput) || linea.includes(textInput);
+            let matchesMarca = selectedMarca === "" || marca === selectedMarca;
+            let matchesLinea = selectedLinea === "" || linea === selectedLinea;
+
+            if (matchesText && matchesMarca && matchesLinea) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function filterEquiposSvc() {
+        let textInput = document.getElementById('searchInputSvc').value.toLowerCase();
+        let selectedMarca = document.getElementById('marcaFilterSvc').value.toLowerCase();
+        let selectedLinea = document.getElementById('lineaFilterSvc').value.toLowerCase();
+        
+        let cards = document.querySelectorAll('.equipo-card-svc');
 
         cards.forEach(card => {
             let nombre = card.getAttribute('data-nombre').toLowerCase();
