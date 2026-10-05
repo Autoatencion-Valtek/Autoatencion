@@ -42,7 +42,6 @@
             padding: 16px;
         }
 
-        /* Header Navbar */
         .navbar {
             background: var(--dark-bg);
             padding: 16px 24px;
@@ -91,12 +90,6 @@
             white-space: nowrap;
         }
 
-        .badge-portal:hover {
-            background: rgba(37, 201, 132, 0.25);
-            transform: scale(1.02);
-        }
-
-        /* Bloques de Selección Principal */
         .main-nav-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -171,7 +164,6 @@
             border-color: var(--valtek-green);
         }
 
-        /* Secciones del Portal */
         .tab-section {
             display: none;
         }
@@ -180,7 +172,6 @@
             display: block;
         }
 
-        /* --- ESTILOS DE INFORMÁTICA (PROACTIVELIS) --- */
         .areas-nav-section {
             background: #E2E8F0;
             padding: 14px 16px;
@@ -321,7 +312,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* --- ESTILOS DE CATÁLOGO Y EQUIPOS --- */
         .area-title {
             font-size: 18px;
             font-weight: 800;
@@ -419,7 +409,6 @@
             cursor: pointer;
         }
 
-        /* Detalle del Equipo */
         .equipo-detail-wrapper {
             display: none;
             width: 100%;
@@ -528,7 +517,6 @@
             margin-bottom: 12px;
         }
 
-        /* Modal Reproductor de Video */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -580,7 +568,6 @@
             width: 100%; height: 100%;
         }
 
-        /* Footer Oficial Valtek */
         .footer {
             background: var(--dark-bg);
             color: #CBD5E1;
@@ -617,7 +604,6 @@
             color: #475569;
         }
 
-        /* REGLETA DE RESPONSIVIDAD PARA MÓVILES */
         @media (max-width: 768px) {
             body {
                 padding: 6px;
@@ -641,17 +627,7 @@
                 padding: 8px 16px;
             }
 
-            .main-nav-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .areas-grid-tabs {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-
-            .equipos-grid, .cards-grid {
+            .main-nav-grid, .areas-grid-tabs, .equipos-grid, .cards-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -681,7 +657,6 @@
 
 <div class="portal-container">
     
-    <!-- Navbar Header -->
     <header class="navbar">
         <div class="brand-header">
             <div class="logo-box" onclick="goHome()" title="Ir al Portal Inicial">
@@ -693,7 +668,6 @@
 
     <div class="main-content-padding">
         
-        <!-- Bloques de Navegación Principal -->
         <section class="main-nav-grid">
             <div id="nav-btn-informatica" class="nav-card active" onclick="switchMainTab('informatica', this)">
                 <div class="nav-icon icon-red">💻</div>
@@ -739,7 +713,6 @@
                 </div>
             </div>
 
-            <!-- Subárea 1: Prestaciones -->
             <div id="inf-area1" class="cards-grid area-panel active">
                 <div class="card">
                     <div>
@@ -826,7 +799,6 @@
                 </div>
             </div>
 
-            <!-- Subárea 2: Usuarios -->
             <div id="inf-area2" class="cards-grid area-panel">
                 <div class="card">
                     <div>
@@ -841,7 +813,6 @@
                 </div>
             </div>
 
-            <!-- Subárea 3: Zebra -->
             <div id="inf-area3" class="cards-grid area-panel">
                 <div class="card">
                     <div>
@@ -920,10 +891,8 @@
                 </select>
             </div>
 
-            <!-- Catálogo de Equipos de Aplicaciones -->
             <div id="equiposGridApp" class="equipos-grid">
                 
-                <!-- Equipo 1: microscan autoscan -->
                 <div class="equipo-card equipo-card-app" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
                     <div>
                         <h3 class="equipo-title-exact">MICROSCAN AUTOSCAN</h3>
@@ -934,7 +903,6 @@
                     </div>
                 </div>
 
-                <!-- Equipo 2: microscan walkaway 96 plus -->
                 <div class="equipo-card equipo-card-app" data-nombre="microscan walkaway 96 plus" data-marca="beckman coulter" data-linea="microbiologia">
                     <div>
                         <h3 class="equipo-title-exact">MICROSCAN WALKAWAY 96 PLUS</h3>
@@ -945,7 +913,6 @@
                     </div>
                 </div>
 
-                <!-- Equipo 3: siemens bft ii (Coagulación) -->
                 <div class="equipo-card equipo-card-app" data-nombre="siemens bft ii bft 2" data-marca="siemens" data-linea="coagulacion">
                     <div>
                         <h3 class="equipo-title-exact">SIEMENS BFT II</h3>
@@ -956,7 +923,6 @@
                     </div>
                 </div>
 
-                <!-- Equipo 4: sysmex uc-3500 (Orinas) -->
                 <div class="equipo-card equipo-card-app" data-nombre="sysmex uc-3500 uc3500 orinas" data-marca="sysmex" data-linea="orinas">
                     <div>
                         <h3 class="equipo-title-exact">SYSMEX UC-3500</h3>
@@ -967,7 +933,6 @@
                     </div>
                 </div>
 
-                <!-- Equipo 5: sysmex uc-1000 (Orinas) -->
                 <div class="equipo-card equipo-card-app" data-nombre="sysmex uc-1000 uc1000 uc1000s orinas" data-marca="sysmex" data-linea="orinas">
                     <div>
                         <h3 class="equipo-title-exact">SYSMEX UC-1000</h3>
@@ -978,7 +943,6 @@
                     </div>
                 </div>
 
-                <!-- Equipo 6: mindray bc-30s (Hematología) -->
                 <div class="equipo-card equipo-card-app" data-nombre="mindray bc-30s bc30s hematologia" data-marca="mindray" data-linea="hematologia">
                     <div>
                         <h3 class="equipo-title-exact">MINDRAY BC-30S</h3>
@@ -989,7 +953,6 @@
                     </div>
                 </div>
 
-                <!-- Equipo 7: mindray bc-6200 (Hematología) -->
                 <div class="equipo-card equipo-card-app" data-nombre="mindray bc-6200 bc6200 hematologia" data-marca="mindray" data-linea="hematologia">
                     <div>
                         <h3 class="equipo-title-exact">MINDRAY BC-6200</h3>
@@ -1000,7 +963,6 @@
                     </div>
                 </div>
 
-                <!-- Equipo 8: mindray bc-780 (Hematología) -->
                 <div class="equipo-card equipo-card-app" data-nombre="mindray bc-780 bc780 hematologia" data-marca="mindray" data-linea="hematologia">
                     <div>
                         <h3 class="equipo-title-exact">MINDRAY BC-780</h3>
@@ -1011,7 +973,6 @@
                     </div>
                 </div>
 
-                <!-- Equipo 9: mindray mc-80 (Hematología) -->
                 <div class="equipo-card equipo-card-app" data-nombre="mindray mc-80 mc80 hematologia" data-marca="mindray" data-linea="hematologia">
                     <div>
                         <h3 class="equipo-title-exact">MINDRAY MC-80</h3>
@@ -1022,7 +983,6 @@
                     </div>
                 </div>
 
-                <!-- Equipo 10: mindray sc-120 (Hematología) -->
                 <div class="equipo-card equipo-card-app" data-nombre="mindray sc-120 sc120 hematologia" data-marca="mindray" data-linea="hematologia">
                     <div>
                         <h3 class="equipo-title-exact">MINDRAY SC-120</h3>
@@ -1291,7 +1251,6 @@
 
     </div>
 
-    <!-- Footer Oficial -->
     <footer class="footer">
         <span class="footer-brand">Valtek S.A. — Portal de Autoatención</span>
         <span class="footer-divider">|</span>
