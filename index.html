@@ -896,7 +896,7 @@
             
             <div class="search-container">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInputApp" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft, sysmex..." onkeyup="filterEquiposApp()">
+                <input type="text" id="searchInputApp" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft, sysmex, mindray..." onkeyup="filterEquiposApp()">
             </div>
 
             <div class="filters-row">
@@ -905,6 +905,7 @@
                     <option value="beckman coulter">Beckman Coulter</option>
                     <option value="siemens">Siemens</option>
                     <option value="sysmex">Sysmex</option>
+                    <option value="mindray">Mindray</option>
                 </select>
 
                 <select id="lineaFilterApp" class="filter-select" onchange="filterEquiposApp()">
@@ -912,6 +913,7 @@
                     <option value="microbiologia">Microbiología</option>
                     <option value="coagulacion">Coagulación</option>
                     <option value="orinas">Orinas</option>
+                    <option value="hematologia">Hematología</option>
                 </select>
             </div>
 
@@ -970,6 +972,61 @@
                     </div>
                     <div class="equipo-footer-badge" onclick="showEquipoDetail('sysmexuc1000')" style="background: #FEF3C7; color: #92400E;">
                         Orinas · 8 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 6: mindray bc-30s (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray bc-30s bc30s hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray bc-30s</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraybc30s')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 6 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 7: mindray bc-6200 (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray bc-6200 bc6200 hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray bc-6200</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraybc6200')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 3 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 8: mindray bc-780 (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray bc-780 bc780 hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray bc-780</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraybc780')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 2 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 9: mindray mc-80 (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray mc-80 mc80 hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray mc-80</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraymc80')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 1 video
+                    </div>
+                </div>
+
+                <!-- Equipo 10: mindray sc-120 (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray sc-120 sc120 hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray sc-120</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraysc120')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 2 videos
                     </div>
                 </div>
 
@@ -1226,7 +1283,7 @@
                 </div>
             </div>
 
-            <!-- Detalle: sysmex uc-1000 (Orinas - RUTA RUTA RUTA CORREGIDA) -->
+            <!-- Detalle: sysmex uc-1000 (Orinas) -->
             <div id="detail-sysmexuc1000" class="equipo-detail-wrapper">
                 <div class="equipo-detail-view">
                     <button class="btn-volver" onclick="hideEquipoDetail('sysmexuc1000', 'equiposGridApp')">← Volver al catálogo</button>
@@ -1315,6 +1372,226 @@
                                 <p class="video-info-sub">Sysmex UC-1000_Procesamiento de Muestras</p>
                             </div>
                             <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Procesamiento de Muestras/Sysmex UC-1000_Procesamiento de Muestras.mp4', 'Procesamiento de Muestras - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle: mindray bc-30s (Hematología) -->
+            <div id="detail-mindraybc30s" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('mindraybc30s', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · bc-30s</span>
+                        <h2 class="detail-title-exact">mindray bc-30s</h2>
+                        <p class="detail-marca">Marca: Mindray</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Carga de reactivos</h4>
+                                <p class="video-info-sub">Mindray BC-30S_Carga de reactivos</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-30S_Carga de reactivos/Mindray BC-30S_Carga de reactivos.mp4', 'Carga de reactivos - Mindray BC-30S')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Configuración e ingreso de QC</h4>
+                                <p class="video-info-sub">Mindray BC-30S_Configuración e ingreso de QC</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-30S_Configuración e ingreso de QC/Mindray BC-30S_Configuración e ingreso de QC.mp4', 'Configuración e ingreso de QC - Mindray BC-30S')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Encendido</h4>
+                                <p class="video-info-sub">Mindray BC-30S_Encendido</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-30S_Encendido/Mindray BC-30S_Encendido.mp4', 'Encendido - Mindray BC-30S')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimientos</h4>
+                                <p class="video-info-sub">Mindray BC-30S_Mantenimientos</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-30S_Mantenimientos/Mindray BC-30S_Mantenimientos.mp4', 'Mantenimientos - Mindray BC-30S')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Pestaña Revisión Tabla</h4>
+                                <p class="video-info-sub">Mindray BC-30S_Pestaña Revisión Tabla</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-30S_Pestaña Revisión Tabla/Mindray BC-30S_Pestaña Revisión Tabla.mp4', 'Pestaña Revisión Tabla - Mindray BC-30S')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Presentación del analizador e insumos</h4>
+                                <p class="video-info-sub">Mindray BC-30S_Presentación del analizador e insumos</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-30S_Presentación del analizador e insumos/Mindray BC-30S_Presentación del analizador e insumos.mp4', 'Presentación del analizador e insumos - Mindray BC-30S')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle: mindray bc-6200 (Hematología) -->
+            <div id="detail-mindraybc6200" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('mindraybc6200', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · bc-6200</span>
+                        <h2 class="detail-title-exact">mindray bc-6200</h2>
+                        <p class="detail-marca">Marca: Mindray</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Prelearning (Parte 1 de 3)</h4>
+                                <p class="video-info-sub">Mindray BC-6200_Prelearning parte 1 de 3</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-6200_Prelearning parte 1 de 3/Mindray BC-6200_Prelearning parte 1 de 3.mp4', 'Prelearning parte 1 - Mindray BC-6200')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Prelearning (Parte 2 de 3)</h4>
+                                <p class="video-info-sub">Mindray BC-6200_Prelearning parte 2 de 3</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-6200_Prelearning parte 2 de 3/Mindray BC-6200_Prelearning parte 2 de 3.mp4', 'Prelearning parte 2 - Mindray BC-6200')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Prelearning (Parte 3 de 3)</h4>
+                                <p class="video-info-sub">Mindray BC-6200_Prelearning parte 3 de 3</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-6200_Prelearning parte 3 de 3/Mindray BC-6200_Prelearning parte 3 de 3.mp4', 'Prelearning parte 3 - Mindray BC-6200')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle: mindray bc-780 (Hematología) -->
+            <div id="detail-mindraybc780" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('mindraybc780', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · bc-780</span>
+                        <h2 class="detail-title-exact">mindray bc-780</h2>
+                        <p class="detail-marca">Marca: Mindray</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Prelearning (Parte 1 de 2)</h4>
+                                <p class="video-info-sub">Mindray BC-780_Prelearning parte 1 de 2</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-780_Prelearning parte 1 de 2/Mindray BC-780_Prelearning parte 1 de 2.mp4', 'Prelearning parte 1 - Mindray BC-780')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Prelearning (Parte 2 de 2)</h4>
+                                <p class="video-info-sub">Mindray BC-780_Prelearning parte 2 de 2</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray BC-780_Prelearning parte 2 de 2/Mindray BC-780_Prelearning parte 2 de 2.mp4', 'Prelearning parte 2 - Mindray BC-780')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle: mindray mc-80 (Hematología) -->
+            <div id="detail-mindraymc80" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('mindraymc80', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · mc-80</span>
+                        <h2 class="detail-title-exact">mindray mc-80</h2>
+                        <p class="detail-marca">Marca: Mindray</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Prelearning</h4>
+                                <p class="video-info-sub">Mindray MC-80_Prelearning</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray MC-80_Prelearning/Mindray MC-80_Prelearning.mp4', 'Prelearning - Mindray MC-80')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle: mindray sc-120 (Hematología - RUTA RUTA MP4 CORREGIDA) -->
+            <div id="detail-mindraysc120" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('mindraysc120', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · sc-120</span>
+                        <h2 class="detail-title-exact">mindray sc-120</h2>
+                        <p class="detail-marca">Marca: Mindray</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Prelearning</h4>
+                                <p class="video-info-sub">Mindray SC-120_Prelearning</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray SC-120_Prelearning/Mindray SC-120_Prelearning.mp4', 'Prelearning - Mindray SC-120')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Sustitución cinta de carbón</h4>
+                                <p class="video-info-sub">Mindray SC-120_Sustitución cinta de carbón</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Hematologia/Mindray SC-120_Sustitución cinta de carbón/Mindray SC-120_Sustitución cinta de carbón.mp4', 'Sustitución cinta de carbón - Mindray SC-120')">
                                 ▷ Ver video
                             </button>
                         </div>
