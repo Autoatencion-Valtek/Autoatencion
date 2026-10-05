@@ -45,13 +45,13 @@
         /* Header Navbar */
         .navbar {
             background: var(--dark-bg);
-            padding: 12px 20px;
+            padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 4px solid var(--valtek-red);
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 14px;
         }
 
         .brand-header {
@@ -62,7 +62,7 @@
 
         .logo-box {
             background: #ffffff;
-            padding: 6px 14px;
+            padding: 8px 18px;
             border-radius: 8px;
             cursor: pointer;
             transition: opacity 0.2s;
@@ -72,28 +72,28 @@
             opacity: 0.9;
         }
 
-        /* LOGO 150% MÁS GRANDE (32px -> 48px) */
         .logo-box img {
-            height: 48px;
+            height: 96px;
             width: auto;
             display: block;
         }
 
         .badge-portal {
             color: var(--valtek-green);
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             background: rgba(37, 201, 132, 0.15);
-            padding: 6px 12px;
-            border-radius: 20px;
-            border: 1px solid var(--valtek-green);
+            padding: 10px 20px;
+            border-radius: 28px;
+            border: 2px solid var(--valtek-green);
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.2s;
             white-space: nowrap;
         }
 
         .badge-portal:hover {
             background: rgba(37, 201, 132, 0.25);
+            transform: scale(1.02);
         }
 
         /* Bloques de Selección Principal */
@@ -629,6 +629,15 @@
                 text-align: center;
             }
 
+            .logo-box img {
+                height: 60px;
+            }
+
+            .badge-portal {
+                font-size: 15px;
+                padding: 8px 16px;
+            }
+
             .main-nav-grid {
                 grid-template-columns: 1fr;
                 gap: 12px;
@@ -673,17 +682,17 @@
     <header class="navbar">
         <div class="brand-header">
             <div class="logo-box" onclick="goHome()" title="Ir al Portal Inicial">
-                <img src="logo.png" alt="Valtek" onerror="this.onerror=null; this.src='https://via.placeholder.com/180x48?text=VALTEK';">
+                <img src="logo.png" alt="Valtek" onerror="this.onerror=null; this.src='https://via.placeholder.com/240x96?text=VALTEK';">
             </div>
         </div>
-        <span class="badge-portal" onclick="goHome()" title="Ir al Portal Inicial">Portal Autoatención</span>
+        <span class="badge-portal" onclick="goHome()" title="Ir al Portal Inicial">Portal de Autoatención</span>
     </header>
 
     <div class="main-content-padding">
         
         <!-- Bloques de Navegación Principal -->
         <section class="main-nav-grid">
-            <div id="nav-btn-informatica" class="nav-card active" onclick="goHome()">
+            <div id="nav-btn-informatica" class="nav-card active" onclick="switchMainTab('informatica', this)">
                 <div class="nav-icon icon-red">💻</div>
                 <h3 class="nav-card-title">Soporte Informática</h3>
                 <p class="nav-card-sub">Gestión de incidencias y requerimientos para la plataforma ProActiveLIS.</p>
@@ -953,6 +962,17 @@
                     </div>
                 </div>
 
+                <!-- Equipo 5: sysmex uc-1000 (Orinas) -->
+                <div class="equipo-card equipo-card-app" data-nombre="sysmex uc-1000 uc1000 uc1000s orinas" data-marca="sysmex" data-linea="orinas">
+                    <div>
+                        <h3 class="equipo-title-exact">sysmex uc-1000</h3>
+                        <p class="equipo-marca">Sysmex</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('sysmexuc1000')" style="background: #FEF3C7; color: #92400E;">
+                        Orinas · 8 videos
+                    </div>
+                </div>
+
             </div>
 
             <!-- Detalle: microscan autoscan -->
@@ -1206,6 +1226,102 @@
                 </div>
             </div>
 
+            <!-- Detalle: sysmex uc-1000 (Orinas - RUTA RUTA RUTA CORREGIDA) -->
+            <div id="detail-sysmexuc1000" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('sysmexuc1000', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · uc-1000</span>
+                        <h2 class="detail-title-exact">sysmex uc-1000</h2>
+                        <p class="detail-marca">Marca: Sysmex</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Menú Principal</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Menú Principal</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Menú Principal/Sysmex UC-1000_Menú Principal.mp4', 'Menú Principal - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Procesamiento de Controles</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Procesamiento de Controles</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000S_Procesamiento de Controles/Sysmex UC-1000_Procesamiento de Controles.mp4', 'Procesamiento de Controles - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Ajustes Generales</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Ajustes Generales</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Ajustes Generales/Sysmex UC-1000_Ajustes Generales.mp4', 'Ajustes Generales - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Características Generales</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Características Generales</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Características Generales/Sysmex UC-1000_Características Generales.mp4', 'Características Generales - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Encendido y Apagado</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Encendido y Apagado</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Encendido y Apagado/Sysmex UC-1000_Encendido y Apagado.mp4', 'Encendido y Apagado - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Extras</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Extras</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Extras/Sysmex UC-1000_Extras.mp4', 'Extras - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Mantenimiento</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Mantenimiento/Sysmex UC-1000_Mantenimiento.mp4', 'Mantenimiento - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Procesamiento de Muestras</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Procesamiento de Muestras</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Procesamiento de Muestras/Sysmex UC-1000_Procesamiento de Muestras.mp4', 'Procesamiento de Muestras - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- TAB 3: SERVICIO TÉCNICO -->
@@ -1232,7 +1348,7 @@
             <!-- Catálogo de Servicio Técnico -->
             <div id="equiposGridSvc" class="equipos-grid">
                 
-                <!-- Equipo Mindray Serie BS en Servicio Técnico (Sin tags ni fondos adicionales) -->
+                <!-- Equipo Mindray Serie BS en Servicio Técnico -->
                 <div class="equipo-card equipo-card-svc" data-nombre="mindray serie bs bs-480 bs480 quimica" data-marca="mindray" data-linea="quimica">
                     <div>
                         <h3 class="equipo-title-exact">mindray serie bs</h3>
@@ -1362,16 +1478,20 @@
 </div>
 
 <script>
+    function resetAllDetails() {
+        document.querySelectorAll('.equipo-detail-wrapper').forEach(el => el.style.display = 'none');
+        document.getElementById('equiposGridApp').style.display = 'grid';
+        document.getElementById('equiposGridSvc').style.display = 'grid';
+    }
+
     function goHome() {
-        hideEquipoDetail('autoscan', 'equiposGridApp');
-        hideEquipoDetail('walkaway', 'equiposGridApp');
-        hideEquipoDetail('bft2', 'equiposGridApp');
-        hideEquipoDetail('sysmexuc3500', 'equiposGridApp');
-        hideEquipoDetail('mindraybs', 'equiposGridSvc');
+        resetAllDetails();
         switchMainTab('informatica', document.getElementById('nav-btn-informatica'));
     }
 
     function switchMainTab(tabId, element) {
+        resetAllDetails();
+
         document.querySelectorAll('.nav-card').forEach(card => card.classList.remove('active'));
         element.classList.add('active');
 
