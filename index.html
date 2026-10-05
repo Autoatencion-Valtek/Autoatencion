@@ -570,13 +570,28 @@
             cursor: pointer;
         }
 
-        .modal-body {
+        /* CUERPO INDEPENDIENTE PARA VIDEO (16/9) */
+        .video-modal-body {
             background: #000;
             aspect-ratio: 16/9;
+            width: 100%;
         }
 
-        .modal-body video {
+        .video-modal-body video {
             width: 100%; height: 100%;
+        }
+
+        /* CUERPO INDEPENDIENTE PARA PDF (ALTURA ADAPTATIVA RESPONSIVA) */
+        .pdf-modal-body {
+            background: #ffffff;
+            height: 75vh;
+            width: 100%;
+        }
+
+        .pdf-modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Footer Oficial Valtek */
@@ -672,6 +687,10 @@
             .footer-brand, .footer-contact-highlight, .footer-email {
                 display: block;
                 margin-bottom: 4px;
+            }
+
+            .pdf-modal-body {
+                height: 80vh;
             }
         }
     </style>
@@ -771,3 +790,554 @@
                         <p class="card-desc">Agrupa múltiples análisis bajo un mismo perfil. Asignación masiva de muestras en un solo paso.</p>
                     </div>
                     <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.mp4', 'Prestaciones compuestas o perfiles')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/prestaciones/3_crear_prestacion_con_multiples_pruebas/3_crear_prestacion_con_multiples_pruebas.pdf', 'Prestaciones compuestas o perfiles')">📄 Guía PDF</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 04 • VALORES BIOLÓGICOS</span>
+                        <h3 class="card-title">Añadir rangos de referencia a una prueba</h3>
+                        <p class="card-desc">Configuración de límites de normalidad por edad, sexo y tipo de muestra.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.mp4', 'Añadir rangos de referencia')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/prestaciones/4_como_crear_añadir_valores_de_referencia/4_como_crear_añadir_valores_de_referencia.pdf', 'Añadir rangos de referencia')">📄 Guía PDF</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 05 • FORMATOS</span>
+                        <h3 class="card-title">Añadir decimales a una prueba específica</h3>
+                        <p class="card-desc">Ajuste de decimales visibles en los resultados dentro de una prestación específica.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.mp4', 'Añadir decimales a una prueba')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/prestaciones/5_añadir_decimales_a_una_prueba/5_añadir_decimales_a_una_prueba.pdf', 'Añadir decimales a una prueba')">📄 Guía PDF</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 06 • CÁLCULOS</span>
+                        <h3 class="card-title">Configuración de pruebas tipo Fórmula</h3>
+                        <p class="card-desc">Creación de cálculos automáticos asociando alias de otras pruebas.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.mp4', 'Configuración de pruebas tipo Fórmula')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/prestaciones/6_configurar_formula_simple/6_configurar_formula_simple.pdf', 'Configuración de pruebas tipo Fórmula')">📄 Guía PDF</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 07 • MANTENIMIENTO</span>
+                        <h3 class="card-title">Editar y actualizar valores de referencia</h3>
+                        <p class="card-desc">Modificación de rangos biológicos y valores críticos en pruebas existentes.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.mp4', 'Editar y actualizar valores de referencia')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/prestaciones/7_modificar_valores_de_referencia/7_modificar_valores_de_referencia.pdf', 'Editar y actualizar valores de referencia')">📄 Guía PDF</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subárea 2: Usuarios -->
+            <div id="inf-area2" class="cards-grid area-panel">
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 01 • ACCESOS Y PERMISOS</span>
+                        <h3 class="card-title">Cómo crear un usuario en el sistema</h3>
+                        <p class="card-desc">Alta de nuevos funcionarios. Configuración de credenciales, perfil y PIN.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/usuarios/1_creacion_de_usuario_final.mp4', 'Cómo crear un usuario en el sistema')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/usuarios/1_creacion_de_usuario_final.pdf', 'Cómo crear un usuario en el sistema')">📄 Guía PDF</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subárea 3: Zebra -->
+            <div id="inf-area3" class="cards-grid area-panel">
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 01 • CONFIGURACIÓN</span>
+                        <h3 class="card-title">Calibrar la impresora de etiquetas Zebra</h3>
+                        <p class="card-desc">Ajuste de posición, detección del tamaño de etiqueta y calibración de densidad.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.mp4', 'Calibrar impresora Zebra')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/zebra/1_calibracion_impresora_zebra/1_calibracion_impresora_zebra.pdf', 'Calibrar impresora Zebra')">📄 Guía PDF</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 02 • INSTALACIÓN</span>
+                        <h3 class="card-title">Instalación de drivers para impresora Zebra</h3>
+                        <p class="card-desc">Guía para conectar e instalar controladores de Windows en puerto USB.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.mp4', 'Instalación de drivers Zebra')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/zebra/2_instalacion_drivers_impresora_zebra/2_instalacion_drivers_impresora_zebra.pdf', 'Instalación de drivers Zebra')">📄 Guía PDF</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 03 • VINCULACIÓN</span>
+                        <h3 class="card-title">Instalación Plug and Play y archivo .ini</h3>
+                        <p class="card-desc">Vinculación del dispositivo en el archivo de configuración .ini de ProActiveLIS.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.mp4', 'Instalación Plug and Play Zebra')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/zebra/3_instalacion_impresora_zebra_plug_and_play/3_instalacion_impresora_zebra_plug_and_play.pdf', 'Instalación Plug and Play Zebra')">📄 Guía PDF</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">TEMA 04 • MANTENIMIENTO</span>
+                        <h3 class="card-title">Revisión física y limpieza de la impresora Zebra</h3>
+                        <p class="card-desc">Pasos prácticos para limpieza del cabezal térmico y rodillo impulsor.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-video" onclick="playVideo('Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.mp4', 'Revisión física de impresora Zebra')">▶ Ver Video</button>
+                        <button class="btn-pdf" onclick="openPdf('Informatica/zebra/4_revision_fisica_de_impresora/4_revision_fisica_de_impresora.pdf', 'Revisión física de impresora Zebra')">📄 Guía PDF</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: SOPORTE APLICACIONES -->
+        <section id="tab-aplicaciones" class="tab-section">
+            <h2 class="area-title">Área: Soporte Aplicaciones</h2>
+            
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInputApp" class="search-input" placeholder="Buscar por nombre de equipo, ej: microscan, bft, sysmex, mindray..." onkeyup="filterEquiposApp()">
+            </div>
+
+            <div class="filters-row">
+                <select id="marcaFilterApp" class="filter-select" onchange="filterEquiposApp()">
+                    <option value="">Marca: Todas</option>
+                    <option value="beckman coulter">Beckman Coulter</option>
+                    <option value="siemens">Siemens</option>
+                    <option value="sysmex">Sysmex</option>
+                    <option value="mindray">Mindray</option>
+                </select>
+
+                <select id="lineaFilterApp" class="filter-select" onchange="filterEquiposApp()">
+                    <option value="">Línea: Todas</option>
+                    <option value="microbiologia">Microbiología</option>
+                    <option value="coagulacion">Coagulación</option>
+                    <option value="orinas">Orinas</option>
+                    <option value="hematologia">Hematología</option>
+                </select>
+            </div>
+
+            <!-- Catálogo de Equipos de Aplicaciones -->
+            <div id="equiposGridApp" class="equipos-grid">
+                
+                <!-- Equipo 1: microscan autoscan -->
+                <div class="equipo-card equipo-card-app" data-nombre="microscan autoscan" data-marca="beckman coulter" data-linea="microbiologia">
+                    <div>
+                        <h3 class="equipo-title-exact">microscan autoscan</h3>
+                        <p class="equipo-marca">Beckman Coulter</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('autoscan')">
+                        Microbiología · 4 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 2: microscan walkaway 96 plus -->
+                <div class="equipo-card equipo-card-app" data-nombre="microscan walkaway 96 plus" data-marca="beckman coulter" data-linea="microbiologia">
+                    <div>
+                        <h3 class="equipo-title-exact">microscan walkaway 96 plus</h3>
+                        <p class="equipo-marca">Beckman Coulter</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('walkaway')">
+                        Microbiología · 6 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 3: siemens bft ii (Coagulación) -->
+                <div class="equipo-card equipo-card-app" data-nombre="siemens bft ii bft 2" data-marca="siemens" data-linea="coagulacion">
+                    <div>
+                        <h3 class="equipo-title-exact">siemens bft ii</h3>
+                        <p class="equipo-marca">Siemens</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('bft2')" style="background: #FEE2E2; color: #991B1B;">
+                        Coagulación · 7 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 4: sysmex uc-3500 (Orinas) -->
+                <div class="equipo-card equipo-card-app" data-nombre="sysmex uc-3500 uc3500 orinas" data-marca="sysmex" data-linea="orinas">
+                    <div>
+                        <h3 class="equipo-title-exact">sysmex uc-3500</h3>
+                        <p class="equipo-marca">Sysmex</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('sysmexuc3500')" style="background: #FEF3C7; color: #92400E;">
+                        Orinas · 2 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 5: sysmex uc-1000 (Orinas) -->
+                <div class="equipo-card equipo-card-app" data-nombre="sysmex uc-1000 uc1000 uc1000s orinas" data-marca="sysmex" data-linea="orinas">
+                    <div>
+                        <h3 class="equipo-title-exact">sysmex uc-1000</h3>
+                        <p class="equipo-marca">Sysmex</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('sysmexuc1000')" style="background: #FEF3C7; color: #92400E;">
+                        Orinas · 8 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 6: mindray bc-30s (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray bc-30s bc30s hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray bc-30s</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraybc30s')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 6 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 7: mindray bc-6200 (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray bc-6200 bc6200 hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray bc-6200</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraybc6200')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 3 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 8: mindray bc-780 (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray bc-780 bc780 hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray bc-780</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraybc780')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 2 videos
+                    </div>
+                </div>
+
+                <!-- Equipo 9: mindray mc-80 (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray mc-80 mc80 hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray mc-80</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraymc80')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 1 video
+                    </div>
+                </div>
+
+                <!-- Equipo 10: mindray sc-120 (Hematología) -->
+                <div class="equipo-card equipo-card-app" data-nombre="mindray sc-120 sc120 hematologia" data-marca="mindray" data-linea="hematologia">
+                    <div>
+                        <h3 class="equipo-title-exact">mindray sc-120</h3>
+                        <p class="equipo-marca">Mindray</p>
+                    </div>
+                    <div class="equipo-footer-badge" onclick="showEquipoDetail('mindraysc120')" style="background: #E0E7FF; color: #3730A3;">
+                        Hematología · 2 videos
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Detalle: microscan autoscan -->
+            <div id="detail-autoscan" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('autoscan', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · autoscan</span>
+                        <h2 class="detail-title-exact">microscan autoscan</h2>
+                        <p class="detail-marca">Marca: Beckman Coulter</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Instalación</h4>
+                                <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_instalacion_1 de 4/microscan autoscan_beckman coulter_instalacion_1 de 4.mp4', 'instalacion - microscan autoscan')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento</h4>
+                                <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_mantenimiento_2 de 4/microscan autoscan_beckman coulter_mantenimiento_2 de 4.mp4', 'mantenimiento - microscan autoscan')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Procesamiento de muestras</h4>
+                                <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4/microscan autoscan_beckman coulter_procesamiento de muestras_3 de 4.mp4', 'procesamiento de muestras - microscan autoscan')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Revisión de resultados</h4>
+                                <p class="video-info-sub">Valtek Diagnostics - microscan autoscan, Beckman Coulter</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan autoscan_beckman coulter_revision de resultados_4 de 4/microscan autoscan_beckman coulter_revision de resultados_4 de 4.mp4', 'revision de resultados - microscan autoscan')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle: microscan walkaway 96 plus -->
+            <div id="detail-walkaway" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('walkaway', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · walkaway 96 plus</span>
+                        <h2 class="detail-title-exact">microscan walkaway 96 plus</h2>
+                        <p class="detail-marca">Marca: Beckman Coulter</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento diario</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento diario_1 de 6.mp4', 'mantenimiento diario - walkaway 96 plus')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento CC DG diario</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento CC DG diario_2 de 6.mp4', 'mantenimiento CC DG diario - walkaway 96 plus')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento semanal</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento semanal_3 de 6.mp4', 'mantenimiento semanal - walkaway 96 plus')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento mensual disco de referencia</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual disco de referencia_4 de 6.mp4', 'mantenimiento mensual disco de referencia')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento mensual rejilla ventilación</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual rejilla ventilacion_5 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual rejilla ventilacion_5 de 6/microscan walkaway 96 plus_Beckman Coulter_mantenimiento mensual rejilla ventilacion_5 de 6.mp4', 'mantenimiento mensual rejilla ventilación')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Desatascar un panel</h4>
+                                <p class="video-info-sub">microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Microbiologia/microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6/microscan walkaway 96 plus_Beckman Coulter_desatascar un panel_6 de 6.mp4', 'desatascar un panel - walkaway 96 plus')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle: siemens bft ii (Coagulación) -->
+            <div id="detail-bft2" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('bft2', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · bft ii</span>
+                        <h2 class="detail-title-exact">siemens bft ii</h2>
+                        <p class="detail-marca">Marca: Siemens</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Descripción y encendido</h4>
+                                <p class="video-info-sub">1_BFT II_Descripción y encendido</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/1_BFT II_Descripción y encendido/1_BFT II_Descripción y encendido.mp4', 'Descripción y encendido - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantención diaria y según necesidad</h4>
+                                <p class="video-info-sub">2_BFT II_Mantención Diaria y según necesidad</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/2_BFT II_Mantención Diaria y según necesidad/2_BFT II_Mantención Diaria y según necesidad.mp4', 'Mantención diaria y según necesidad - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Insumos</h4>
+                                <p class="video-info-sub">3_BFT II_Insumos</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/3_BFT II_Insumos/3_BFT II_Insumos.mp4', 'Insumos - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Calibración TP (Parte 1)</h4>
+                                <p class="video-info-sub">4_BFT II_Calibración TP_Parte 1</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/4_BFT II_Calibración TP_Parte 1/4_BFT II_Calibración TP_Parte 1.mp4', 'Calibración TP Parte 1 - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Calibración TP (Parte 2)</h4>
+                                <p class="video-info-sub">4_BFT II_Calibración TP_Parte 2</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/4_BFT II_Calibración TP_Parte 2/4_BFT II_Calibración TP_Parte 2.mp4', 'Calibración TP Parte 2 - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Procesamiento de muestras y controles</h4>
+                                <p class="video-info-sub">5_BFT II_Procesamiento de muestras y controles</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/5_BFT II_Procesamiento de muestras y controles/5_BFT II_Procesamiento de muestras y controles.mp4', 'Procesamiento de muestras y controles - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Cómo poner papel térmico en impresora interna</h4>
+                                <p class="video-info-sub">6_BFT II_Cómo poner papel térmico en impresora interna</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Coagulacion/6_BFT II_Cómo poner papel térmico en impresora interna/6_BFT II_Cómo poner papel térmico en impresora interna.mp4', 'Cambio de papel térmico - Siemens BFT II')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle: sysmex uc-3500 (Orinas) -->
+            <div id="detail-sysmexuc3500" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('sysmexuc3500', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · uc-3500</span>
+                        <h2 class="detail-title-exact">sysmex uc-3500</h2>
+                        <p class="detail-marca">Marca: Sysmex</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Carga de tiras</h4>
+                                <p class="video-info-sub">Sysmex UC-3500_Carga de tiras</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-3500_Carga de tiras/Sysmex UC-3500_Carga de tiras.mp4', 'Carga de tiras - Sysmex UC-3500')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Mantenimiento</h4>
+                                <p class="video-info-sub">Sysmex UC-3500_Mantenimiento</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-3500_Mantenimiento/Sysmex UC-3500_Mantenimiento.mp4', 'Mantenimiento - Sysmex UC-3500')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle: sysmex uc-1000 (Orinas) -->
+            <div id="detail-sysmexuc1000" class="equipo-detail-wrapper">
+                <div class="equipo-detail-view">
+                    <button class="btn-volver" onclick="hideEquipoDetail('sysmexuc1000', 'equiposGridApp')">← Volver al catálogo</button>
+                    
+                    <div class="detail-header">
+                        <span class="detail-tag">equipo · uc-1000</span>
+                        <h2 class="detail-title-exact">sysmex uc-1000</h2>
+                        <p class="detail-marca">Marca: Sysmex</p>
+                        <span class="detail-subtag">Asesoría Científica (Aplicaciones)</span>
+                    </div>
+
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Menú Principal</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Menú Principal</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Menú Principal/Sysmex UC-1000_Menú Principal.mp4', 'Menú Principal - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Procesamiento de Controles</h4>
+                                <p class="video-info-sub">Sysmex UC-1000_Procesamiento de Controles</p>
+                            </div>
+                            <button class="btn-ver-video" onclick="playVideo('Aplicaciones/Orinas/Sysmex UC-1000_Procesamiento de Controles/Sysmex UC-1000_Procesamiento de Controles.mp4', 'Procesamiento de Controles - Sysmex UC-1000')">
+                                ▷ Ver video
+                            </button>
+                        </div>
+
+                        <div class="video-item">
+                            <div>
+                                <h4 class="video-info-title">Ajustes Generales</h4>
+                                <p class="video-info-sub">Sysmex UC-1000
